@@ -18,7 +18,8 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
     "dev": "npm run build:dev -- --watch",
-    "prepublishOnly": "npm run clean && npm run build:prod"
+    "prepublishOnly": "npm run clean && npm run build:prod",
+    "validate-dependencies": "./scripts/validate-dependencies.sh"
   },
   "keywords": [
     "cvplus",

@@ -1,32 +1,81 @@
-import { HttpsFunction } from 'firebase-functions/v2/https';
-import { onRequest } from 'firebase-functions/v2/https';
-import { WorkflowOrchestrator } from '../services/WorkflowOrchestrator';
-import { FeatureSkipService } from '../services/FeatureSkipService';
+import { onCall } from 'firebase-functions/v2/https';
+import * as admin from 'firebase-admin';
+import { FieldValue } from 'firebase-admin/firestore';
+import { corsOptions } from '../../config/cors';
 
-/**
- * HTTP function to skip a feature in a job workflow
- * 
- * This function will be migrated from the main functions directory
- * and enhanced with the workflow orchestration capabilities.
- * 
- * @param request - HTTP request containing job ID and feature ID to skip
- * @param response - HTTP response with skip results
- */
-export const skipFeature: HttpsFunction = onRequest(
-  { cors: true },
-  async (request, response) => {
-    try {
-      // TODO: Implement after migration from main functions
-      // Will use WorkflowOrchestrator and FeatureSkipService
-      
-      response.status(501).json({
-        error: 'Function not yet implemented - pending migration'
-      });
-    } catch (error) {
-      console.error('Error skipping feature:', error);
-      response.status(500).json({
-        error: 'Internal server error'
-      });
+export const skipFeature = onCall(
+  {
+    timeoutSeconds: 60,
+    ...corsOptions
+  },
+  async (request) => {
+    
+    if (!request.auth) {
+      throw new Error('User must be authenticated');
     }
-  }
-);
+
+
+    const { jobId, featureId } = request.data;
+
+
+    if (!jobId || !featureId) {
+      throw new Error('Job ID and Feature ID are required');
+    }
+
+    try {
+      // Get the job data
+      const jobDoc = await admin.firestore()
+        .collection('jobs')
+        .doc(jobId)
+        .get();
+      
+      if (!jobDoc.exists) {
+        throw new Error('Job not found');
+      }
+      
+      const jobData = jobDoc.data();
+      
+      // Verify user owns this job
+      if (jobData?.userId !== request.auth.uid) {
+        throw new Error('Unauthorized access to job');
+      }
+      
+
+      // Update the specific feature status to skipped
+      const updateData: any = {
+        [`enhancedFeatures.${featureId}.status`]: 'skipped',
+        [`enhancedFeatures.${featureId}.progress`]: 100,
+        [`enhancedFeatures.${featureId}.processedAt`]: FieldValue.serverTimestamp(),
+        [`enhancedFeatures.${featureId}.skippedAt`]: FieldValue.serverTimestamp(),
+        [`enhancedFeatures.${featureId}.currentStep`]: 'Skipped by user',
+        updatedAt: FieldValue.serverTimestamp()
+      };
+
+      // Also update any legacy status fields for specific features
+      switch (featureId) {
+        case 'generatePodcast':
+          updateData.podcastStatus = 'skipped';
+          break;
+        case 'generateVideo':
+          updateData.videoStatus = 'skipped';
+          break;
+        // Add other feature-specific status fields as needed
+      }
+
+      await admin.firestore()
+        .collection('jobs')
+        .doc(jobId)
+        .update(updateData);
+
+
+      return {
+        success: true,
+        message: `Feature ${featureId} has been skipped`,
+        featureId,
+        jobId
+      };
+    } catch (error: any) {
+      
+      throw new Error(`Failed to skip feature: ${error.message}`);
+    }
+  });
