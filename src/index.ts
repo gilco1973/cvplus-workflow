@@ -1,37 +1,26 @@
 /**
- * CVPlus Workflow Module - Main Export
- * 
- * This is the main entry point for the CVPlus workflow management module.
- * It provides job management, feature orchestration, template management,
- * placeholder value management, certification badges system, and feature skipping functionality.
+ * Workflow Domain - Re-exports for backward compatibility
+ *
+ * This module will be migrated to @cvplus/workflow submodule
+ * All imports should be updated to use @cvplus/workflow/backend
  */
 
-// Backend Services
-export * from './backend/services';
-export * from './backend/functions';
+// Timeline services
+export * from './services/timeline-generation.service';
+export * from './services/timeline-generation-v2.service';
+export * from './services/calendar-integration.service';
 
-// Frontend Components and Hooks
-export * from './frontend/components';
-export * from './frontend/hooks';
+// Timeline framework
+export * from './timeline/timeline-processor.service';
+export * from './timeline/timeline-processor-core.service';
+export * from './timeline/timeline-processor-events.service';
+export * from './timeline/timeline-processor-insights.service';
+export * from './timeline/timeline-sanitizer.service';
+export * from './timeline/timeline-sanitizer-core.service';
+export * from './timeline/timeline-storage.service';
+export * from './timeline/timeline-utils.service';
+export * from './timeline/timeline-utils-core.service';
+export * from './timeline/timeline-validator.service';
 
-// Type Definitions
-export * from './types';
-
-// Constants
-export * from './constants';
-
-// Utility Functions
-export * from './utils';
-
-// Version information
-export const VERSION = '1.0.0';
-export const MODULE_NAME = '@cvplus/workflow';
-
-// Module metadata
-export const WORKFLOW_MODULE = {
-  name: MODULE_NAME,
-  version: VERSION,
-  description: 'CVPlus workflow management module for job processing, feature orchestration, templates, and certification badges',
-  author: 'Gil Klainert',
-  license: 'MIT'
-} as const;
+// Timeline types
+export * from './types/timeline.types';
