@@ -1,5 +1,5 @@
 // @ts-ignore - Export conflicts// Re-export CVGenerator from cv-processing package for workflow module
-export { CVGenerator } from '@cvplus/cv-processing';
+export { CVGenerator } from '@cvplus/processing';
 
 // If direct import doesn't work in the build, provide a simplified interface
 import { FileGenerationResult } from '@cvplus/core';
