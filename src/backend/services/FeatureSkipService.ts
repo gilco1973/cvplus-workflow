@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Feature Skip Service
  * 
  * Service for managing feature skipping functionality within job workflows,

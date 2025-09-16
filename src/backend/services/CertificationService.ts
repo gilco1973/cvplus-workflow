@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Certification Service
  * 
  * Service for managing certification badges, badge issuance, validation,

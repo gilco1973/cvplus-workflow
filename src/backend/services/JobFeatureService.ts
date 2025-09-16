@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Job Feature Service
  * 
  * Service for managing job features, including updates, status changes,

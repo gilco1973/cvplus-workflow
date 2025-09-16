@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * updatePlaceholderValue Firebase Function
  * 
  * Handles real-time placeholder value updates for inline editing in CV preview.

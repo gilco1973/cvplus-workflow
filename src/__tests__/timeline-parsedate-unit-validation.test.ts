@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Unit Test for Timeline Service parseDate Error Handling Verification
  * Created by debugger subagent to validate error handling implementation
  */

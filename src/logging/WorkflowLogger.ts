@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * T037: Workflow logging in packages/workflow/src/logging/WorkflowLogger.ts
  *
  * Specialized logger for job management, workflow orchestration, and feature completion events

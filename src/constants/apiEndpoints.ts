@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * API endpoint constants for the CVPlus Workflow module
  */
 

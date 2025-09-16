@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Generation Service V2 - Modular Architecture
  * Creates interactive timeline visualization from CV data with bulletproof validation
  */

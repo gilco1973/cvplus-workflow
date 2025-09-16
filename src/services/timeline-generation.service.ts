@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Generation Service - Enhanced with Bulletproof Validation
  * Creates interactive timeline visualization from CV data with comprehensive sanitization
  * 

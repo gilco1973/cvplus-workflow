@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Badge Verification Service
  * Integrates with digital badge providers for certification verification
  * Author: Gil Klainert

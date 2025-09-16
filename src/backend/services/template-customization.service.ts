@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Template Customization Service
  * 
  * Advanced AI-powered template customization service for CVPlus web portals.

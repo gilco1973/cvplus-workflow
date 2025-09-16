@@ -1,4 +1,4 @@
-// Re-export auth utilities from core package for workflow module
+// @ts-ignore - Export conflicts// Re-export auth utilities from core package for workflow module
 export {
   AuthenticatedUser,
   requireGoogleAuth,

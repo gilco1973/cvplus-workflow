@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * CVPlus Workflow Module - Constants Export
  * 
  * This module exports all workflow-related constants

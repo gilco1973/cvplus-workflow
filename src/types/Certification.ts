@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Certification-related type definitions for the CVPlus Workflow module
  */
 

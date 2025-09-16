@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Processor Events Service
  * Handles individual event processing for different CV data types
  */

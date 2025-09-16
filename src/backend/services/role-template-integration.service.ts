@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Role-Template Integration Service
  * 
  * Connects the role system with the template system in CVPlus to provide

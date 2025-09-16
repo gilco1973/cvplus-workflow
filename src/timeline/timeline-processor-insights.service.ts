@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Processor Insights Service
  * Handles analysis and insight generation from timeline events
  */

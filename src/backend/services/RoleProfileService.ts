@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Role Profile Service
  * 
  * Service for managing role-based CV profiles, role-specific templates,

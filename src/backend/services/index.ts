@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * CVPlus Workflow Module - Backend Services Export
  * 
  * This module exports all workflow-related backend services

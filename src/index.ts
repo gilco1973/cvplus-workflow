@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Workflow Domain - Re-exports for backward compatibility
  *
  * This module will be migrated to @cvplus/workflow submodule

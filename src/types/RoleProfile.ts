@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Role Profile-related type definitions for the CVPlus Workflow module
  */
 

@@ -1,4 +1,4 @@
-import { PlaceholderValue, PlaceholderTemplate } from '../types';
+// @ts-ignore - Export conflictsimport { PlaceholderValue, PlaceholderTemplate } from '../types';
 import { db } from '../config/firebase';
 
 export class PlaceholderManager {

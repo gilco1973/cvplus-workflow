@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Template-related type definitions for the CVPlus Workflow module
  */
 

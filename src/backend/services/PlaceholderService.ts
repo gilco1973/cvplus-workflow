@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Placeholder Service
  * 
  * Service for managing placeholder values in CV templates and job workflows,

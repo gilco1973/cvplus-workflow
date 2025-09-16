@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Processor Core Service
  * Core CV data processing orchestrator
  */

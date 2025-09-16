@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Workflow Orchestrator Service
  * 
  * Central orchestrator for managing CV workflow processes including

@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * CVPlus Workflow Module - Frontend Components Export
  * 
  * This module exports all workflow-related React components

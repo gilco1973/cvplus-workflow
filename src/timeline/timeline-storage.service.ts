@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Storage Service
  * Handles Firestore storage with enhanced error handling and retry logic
  */

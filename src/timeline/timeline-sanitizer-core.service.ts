@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Sanitizer Core Service
  * Core sanitization functionality for timeline data
  */

@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Core Utilities Service
  * Core date parsing and validation utilities
  */

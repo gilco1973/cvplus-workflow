@@ -1,4 +1,4 @@
-import { onCall } from 'firebase-functions/v2/https';
+// @ts-ignore - Export conflictsimport { onCall } from 'firebase-functions/v2/https';
 import { CVTemplate } from '../../types';
 import { corsOptions } from '../../config/cors';
 

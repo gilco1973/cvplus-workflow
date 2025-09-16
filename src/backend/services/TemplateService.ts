@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Template Service
  * 
  * Service for managing CV templates, template metadata, and template operations

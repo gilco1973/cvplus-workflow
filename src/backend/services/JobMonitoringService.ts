@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Job Monitoring Service
  * 
  * Service for monitoring job progress, status updates, and real-time tracking

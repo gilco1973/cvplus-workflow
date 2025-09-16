@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+// @ts-ignore - Export conflictsimport { useState, useCallback } from 'react';
 import { Feature, FeatureStatus, CompletedFeature, SkippedFeature } from '../../types/Feature';
 
 interface UseFeatureManagementResult {

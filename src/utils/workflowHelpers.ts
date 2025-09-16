@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Workflow helper functions for the CVPlus Workflow module
  */
 

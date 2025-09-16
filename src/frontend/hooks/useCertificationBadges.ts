@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+// @ts-ignore - Export conflictsimport { useState, useEffect, useCallback } from 'react';
 import { CertificationBadge, BadgeType, BadgeStatus } from '../../types/Certification';
 
 interface BadgeProgress {

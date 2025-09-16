@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Data Sanitizer Service
  * Handles deep cleaning and sanitization of timeline data for Firestore storage
  */

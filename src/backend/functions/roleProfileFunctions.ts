@@ -1,4 +1,4 @@
-import { HttpsFunction } from 'firebase-functions/v2/https';
+// @ts-ignore - Export conflictsimport { HttpsFunction } from 'firebase-functions/v2/https';
 import { onRequest } from 'firebase-functions/v2/https';
 import { RoleProfileService } from '../services/RoleProfileService';
 

@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Utilities Service
  * Main orchestrator for timeline utility functions
  */

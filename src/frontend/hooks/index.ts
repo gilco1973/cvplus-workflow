@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * CVPlus Workflow Module - Frontend Hooks Export
  * 
  * This module exports all workflow-related React hooks

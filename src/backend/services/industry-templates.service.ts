@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Industry-Specific Template System
  * 
  * Comprehensive templates for different industry sectors

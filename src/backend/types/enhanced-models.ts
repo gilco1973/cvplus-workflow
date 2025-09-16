@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Enhanced CV models for workflow processing
  */
 

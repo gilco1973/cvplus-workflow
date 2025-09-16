@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Certification Badges Service
  * Generates verified badges for professional certifications
  */

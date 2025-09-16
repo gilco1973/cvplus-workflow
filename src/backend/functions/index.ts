@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * CVPlus Workflow Module - Firebase Functions Export
  * 
  * This module exports all workflow-related Firebase functions

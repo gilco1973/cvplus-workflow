@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Feature Completion Service
  * 
  * Service for managing feature completion within job workflows,

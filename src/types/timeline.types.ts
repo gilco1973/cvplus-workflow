@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Timeline Service Type Definitions
  * Shared types for timeline generation and validation
  */

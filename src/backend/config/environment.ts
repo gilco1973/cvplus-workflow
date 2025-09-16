@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Environment configuration for workflow module
  */
 

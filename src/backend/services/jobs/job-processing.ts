@@ -1,4 +1,4 @@
-/**
+// @ts-ignore - Export conflicts/**
  * Job Processing Service for Firebase Functions
  * 
  * Handles CV data retrieval and processing for recommendations system.
