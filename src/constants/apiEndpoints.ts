@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * API endpoint constants for the CVPlus Workflow module
- */
+  */
 
 // Base API Configuration
 export const API_CONFIG = {

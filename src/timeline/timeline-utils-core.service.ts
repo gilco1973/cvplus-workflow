@@ -1,13 +1,14 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Core Utilities Service
  * Core date parsing and validation utilities
- */
+  */
 
 export class TimelineUtilsCoreService {
   
   /**
    * Parse date string to Date object with comprehensive error handling
-   */
+    */
   parseDate(dateStr: string): Date {
     try {
       if (!dateStr || typeof dateStr !== 'string') {
@@ -62,7 +63,7 @@ export class TimelineUtilsCoreService {
   
   /**
    * Validate date range
-   */
+    */
   private isValidDateRange(date: Date): boolean {
     try {
       const now = new Date();
@@ -76,7 +77,7 @@ export class TimelineUtilsCoreService {
   
   /**
    * Check if date represents recent/current position
-   */
+    */
   isRecent(dateStr: string): boolean {
     if (!dateStr || typeof dateStr !== 'string') return false;
     const keywords = ['present', 'current', 'now', 'ongoing'];
@@ -85,7 +86,7 @@ export class TimelineUtilsCoreService {
   
   /**
    * Estimate education start date
-   */
+    */
   estimateEducationStartDate(edu: any): Date {
     try {
       if (!edu || !edu.endDate) return new Date();
@@ -114,7 +115,7 @@ export class TimelineUtilsCoreService {
   
   /**
    * Extract impact metrics from achievements
-   */
+    */
   extractImpactMetrics(achievements: string[]): { metric: string; value: string }[] {
     try {
       if (!achievements || !Array.isArray(achievements)) return [];
@@ -154,7 +155,7 @@ export class TimelineUtilsCoreService {
   
   /**
    * Extract achievement title
-   */
+    */
   extractAchievementTitle(achievement: string): string {
     if (!achievement || typeof achievement !== 'string') return 'Achievement';
     

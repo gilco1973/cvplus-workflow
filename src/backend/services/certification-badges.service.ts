@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Certification Badges Service
  * Generates verified badges for professional certifications
- */
+  */
 
 import { ParsedCV } from '../types/enhanced-models';
 import * as admin from 'firebase-admin';
@@ -133,7 +134,7 @@ export class CertificationBadgesService {
   
   /**
    * Generate certification badges from CV
-   */
+    */
   async generateCertificationBadges(
     parsedCV: ParsedCV, 
     jobId: string
@@ -171,7 +172,7 @@ export class CertificationBadgesService {
   
   /**
    * Extract and enhance certifications
-   */
+    */
   private async extractAndEnhanceCertifications(cv: ParsedCV): Promise<CertificationBadge[]> {
     const badges: CertificationBadge[] = [];
     
@@ -193,7 +194,7 @@ export class CertificationBadgesService {
   
   /**
    * Create badge from certification data
-   */
+    */
   private async createBadgeFromCertification(cert: any): Promise<CertificationBadge> {
     const issuer = this.normalizeIssuer(cert.issuer);
     const provider = this.certificationProviders[issuer];
@@ -243,7 +244,7 @@ export class CertificationBadgesService {
   
   /**
    * Extract certifications from experience using AI
-   */
+    */
   private async extractCertificationsFromExperience(cv: ParsedCV): Promise<CertificationBadge[]> {
     const badges: CertificationBadge[] = [];
     
@@ -291,7 +292,7 @@ export class CertificationBadgesService {
   
   /**
    * Normalize issuer name
-   */
+    */
   private normalizeIssuer(issuer: string): string {
     const issuerLower = issuer.toLowerCase();
     
@@ -315,7 +316,7 @@ export class CertificationBadgesService {
   
   /**
    * Extract verification information
-   */
+    */
   private extractVerificationInfo(cert: any): { 
     credentialId?: string; 
     verificationUrl?: string;
@@ -336,7 +337,7 @@ export class CertificationBadgesService {
   
   /**
    * Determine certification category
-   */
+    */
   private determineCategory(
     certName: string, 
     _issuer: string
@@ -381,7 +382,7 @@ export class CertificationBadgesService {
   
   /**
    * Determine certification level
-   */
+    */
   private determineLevel(certName: string): CertificationBadge['level'] | undefined {
     const name = certName.toLowerCase();
     
@@ -405,7 +406,7 @@ export class CertificationBadgesService {
   
   /**
    * Extract skills from certification
-   */
+    */
   private async extractSkillsFromCertification(cert: any): Promise<string[]> {
     const skills: string[] = [];
     const certName = cert.name.toLowerCase();
@@ -440,7 +441,7 @@ export class CertificationBadgesService {
   
   /**
    * Generate badge image data
-   */
+    */
   private generateBadgeImage(
     certName: string,
     issuer: string,
@@ -487,7 +488,7 @@ export class CertificationBadgesService {
   
   /**
    * Get initials from issuer name
-   */
+    */
   private getInitials(issuer: string): string {
     const words = issuer.split(' ');
     if (words.length === 1) {
@@ -498,7 +499,7 @@ export class CertificationBadgesService {
   
   /**
    * Get default colors for category
-   */
+    */
   private getDefaultColors(category: CertificationBadge['category']): {
     primary: string;
     secondary: string;
@@ -517,7 +518,7 @@ export class CertificationBadgesService {
   
   /**
    * Categorize badges
-   */
+    */
   private categorizeBadges(badges: CertificationBadge[]): CertificationBadgesCollection['categories'] {
     return {
       technical: badges.filter(b => b.category === 'technical'),
@@ -530,7 +531,7 @@ export class CertificationBadgesService {
   
   /**
    * Generate statistics
-   */
+    */
   private generateStatistics(badges: CertificationBadge[]): CertificationBadgesCollection['statistics'] {
     const now = new Date();
     const activeBadges = badges.filter(b => !b.expiryDate || b.expiryDate > now);
@@ -563,7 +564,7 @@ export class CertificationBadgesService {
   
   /**
    * Store badges collection in Firestore
-   */
+    */
   private async storeBadgesCollection(
     jobId: string, 
     collection: CertificationBadgesCollection
@@ -583,7 +584,7 @@ export class CertificationBadgesService {
   
   /**
    * Verify certification
-   */
+    */
   async verifyCertification(
     jobId: string,
     badgeId: string,

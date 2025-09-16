@@ -7,11 +7,11 @@ import { RoleProfileService } from '../services/RoleProfileService';
  * 
  * This module will contain functions migrated from role-profile.functions.ts
  * and enhanced with the workflow orchestration capabilities.
- */
+  */
 
 /**
  * HTTP function to create role-based profile
- */
+  */
 export const createRoleProfile: HttpsFunction = onRequest(
   { cors: true },
   async (request, response) => {
@@ -33,7 +33,7 @@ export const createRoleProfile: HttpsFunction = onRequest(
 
 /**
  * HTTP function to update role-based profile
- */
+  */
 export const updateRoleProfile: HttpsFunction = onRequest(
   { cors: true },
   async (request, response) => {
@@ -55,7 +55,7 @@ export const updateRoleProfile: HttpsFunction = onRequest(
 
 /**
  * HTTP function to get role-based profile
- */
+  */
 export const getRoleProfile: HttpsFunction = onRequest(
   { cors: true },
   async (request, response) => {

@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Processor Service - Main Orchestrator
  * Coordinates CV data processing and analysis with modular components
- */
+  */
 
 import { ParsedCV } from '../../../types/enhanced-models';
 import { TimelineEvent, TimelineData } from '../types/timeline.types';
@@ -13,7 +14,7 @@ export class TimelineProcessorService {
   
   /**
    * Helper function to safely extract technical skills from various skill formats
-   */
+    */
   private getTechnicalSkills(skills: string[] | { technical: string[]; soft: string[]; languages?: string[]; tools?: string[]; } | undefined): string[] {
     if (!skills) return [];
     if (Array.isArray(skills)) return skills; // Assume all are technical if it's an array
@@ -22,7 +23,7 @@ export class TimelineProcessorService {
   
   /**
    * Process CV data into timeline events with comprehensive error handling
-   */
+    */
   async processCV(parsedCV: ParsedCV): Promise<TimelineEvent[]> {
     
     try {
@@ -35,7 +36,7 @@ export class TimelineProcessorService {
   
   /**
    * Generate summary data from events and CV
-   */
+    */
   generateSummary(events: TimelineEvent[], cv: ParsedCV): TimelineData['summary'] {
     
     try {
@@ -54,7 +55,7 @@ export class TimelineProcessorService {
   
   /**
    * Generate career insights from events and CV
-   */
+    */
   async generateInsights(events: TimelineEvent[], cv: ParsedCV): Promise<TimelineData['insights']> {
     
     try {

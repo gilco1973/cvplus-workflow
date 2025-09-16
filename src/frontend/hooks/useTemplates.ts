@@ -17,7 +17,7 @@ interface UseTemplatesResult {
  * 
  * Provides access to template data, searching, filtering,
  * and template-related operations within the workflow system.
- */
+  */
 export const useTemplates = (): UseTemplatesResult => {
   const [templates, setTemplates] = useState<CVTemplate[]>([]);
   const [categories, setCategories] = useState<TemplateCategory[]>([]);

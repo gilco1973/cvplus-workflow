@@ -1,8 +1,9 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * CVPlus Workflow Module - Frontend Components Export
  * 
  * This module exports all workflow-related React components
- */
+  */
 
 // Core Workflow Components
 export { WorkflowMonitor } from './WorkflowMonitor';

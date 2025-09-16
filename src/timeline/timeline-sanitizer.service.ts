@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Data Sanitizer Service
  * Handles deep cleaning and sanitization of timeline data for Firestore storage
- */
+  */
 
 import { TimelineData } from '../types/timeline.types';
 import { timelineValidatorService, DataQualityMetrics } from './timeline-validator.service';
@@ -11,7 +12,7 @@ export class TimelineSanitizerService {
   
   /**
    * Enhanced timeline data cleaning with comprehensive validation and sanitization
-   */
+    */
   cleanTimelineData(timelineData: TimelineData): any {
     const startTime = Date.now();
     
@@ -86,7 +87,7 @@ export class TimelineSanitizerService {
   
   /**
    * Sanitize summary data with validation
-   */
+    */
   private sanitizeSummaryData(summary: any, metrics: DataQualityMetrics): any {
     try {
       const cleanSummary = {
@@ -105,7 +106,7 @@ export class TimelineSanitizerService {
   
   /**
    * Sanitize insights data with validation
-   */
+    */
   private sanitizeInsightsData(insights: any, metrics: DataQualityMetrics): any {
     try {
       const cleanInsights = {

@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Workflow Domain - Re-exports for backward compatibility
  *
  * This module will be migrated to @cvplus/workflow submodule
  * All imports should be updated to use @cvplus/workflow/backend
- */
+  */
 
 // Timeline services
 export * from './services/timeline-generation.service';

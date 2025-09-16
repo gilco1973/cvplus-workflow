@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Sanitizer Core Service
  * Core sanitization functionality for timeline data
- */
+  */
 
 import { TimelineEvent } from '../types/timeline.types';
 import { timelineValidatorService, DataQualityMetrics } from './timeline-validator.service';
@@ -10,7 +11,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Sanitize individual timeline event with comprehensive validation
-   */
+    */
   sanitizeTimelineEvent(event: TimelineEvent, index: number, metrics: DataQualityMetrics): any | null {
     try {
       
@@ -53,7 +54,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Process optional field with validation and error handling
-   */
+    */
   private processOptionalField(fieldName: string, value: any, cleanEvent: any, metrics: DataQualityMetrics): void {
     try {
       if (value === undefined || value === null) {
@@ -81,7 +82,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Process array field with deep sanitization
-   */
+    */
   private processArrayField(fieldName: string, value: any, cleanEvent: any, metrics: DataQualityMetrics): void {
     try {
       if (value === undefined || value === null) {
@@ -99,7 +100,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Recursively clean an object by removing undefined values with comprehensive validation
-   */
+    */
   removeUndefinedValues(obj: any): any {
     if (obj === null || obj === undefined) {
       return null;
@@ -136,7 +137,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Get minimal safe structure for catastrophic failure recovery
-   */
+    */
   getMinimalSafeStructure(events: TimelineEvent[]): any {
     return {
       events: events.map((event, index) => ({
@@ -153,7 +154,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Get default summary structure for fallback
-   */
+    */
   getDefaultSummary(): any {
     return {
       totalYearsExperience: 0,
@@ -166,7 +167,7 @@ export class TimelineSanitizerCoreService {
   
   /**
    * Get default insights structure for fallback
-   */
+    */
   getDefaultInsights(): any {
     return {
       careerProgression: 'Career progression analysis not available',

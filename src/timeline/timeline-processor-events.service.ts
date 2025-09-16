@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Processor Events Service
  * Handles individual event processing for different CV data types
- */
+  */
 
 import { ParsedCV } from '../../../types/enhanced-models';
 import { TimelineEvent } from '../types/timeline.types';
@@ -11,7 +12,7 @@ export class TimelineProcessorEventsService {
   
   /**
    * Process work experience into timeline event
-   */
+    */
   processWorkExperience(exp: any, eventIndex: number): TimelineEvent | null {
     if (!exp || !exp.position || !exp.company || !exp.startDate) {
       return null;
@@ -71,7 +72,7 @@ export class TimelineProcessorEventsService {
   
   /**
    * Process education into timeline event
-   */
+    */
   processEducation(edu: any, eventIndex: number): TimelineEvent | null {
     if (!edu || !edu.degree || !edu.field || !edu.institution) {
       return null;
@@ -112,7 +113,7 @@ export class TimelineProcessorEventsService {
   
   /**
    * Process certification into timeline event
-   */
+    */
   processCertification(cert: any, eventIndex: number): TimelineEvent | null {
     if (!cert || !cert.name || !cert.issuer) {
       return null;
@@ -140,7 +141,7 @@ export class TimelineProcessorEventsService {
   
   /**
    * Process achievement into timeline event
-   */
+    */
   processAchievement(achievement: string, eventIndex: number, cv: ParsedCV): TimelineEvent | null {
     if (!achievement || typeof achievement !== 'string' || achievement.trim().length === 0) {
       return null;

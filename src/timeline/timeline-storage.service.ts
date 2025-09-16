@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Storage Service
  * Handles Firestore storage with enhanced error handling and retry logic
- */
+  */
 
 import * as admin from 'firebase-admin';
 import { FieldValue } from 'firebase-admin/firestore';
@@ -12,7 +13,7 @@ export class TimelineStorageService {
   
   /**
    * Validate timeline data before any storage operation
-   */
+    */
   async validateTimelineData(data: any, context: string = 'unknown'): Promise<{
     isValid: boolean;
     sanitizedData: any;
@@ -43,7 +44,7 @@ export class TimelineStorageService {
   /**
    * Store timeline data in Firestore with comprehensive pre-write validation
    * Enhanced for Phase 1.3 with SafeFirestoreService integration
-   */
+    */
   async storeTimelineData(jobId: string, timelineData: any): Promise<void> {
     try {
       
@@ -138,7 +139,7 @@ export class TimelineStorageService {
   
   /**
    * Attempt fallback storage when primary storage fails
-   */
+    */
   private async attemptFallbackStorage(jobId: string, originalData: any): Promise<void> {
     
     try {
@@ -214,7 +215,7 @@ export class TimelineStorageService {
   
   /**
    * Create safe fallback data from original data
-   */
+    */
   private createSafeFallbackData(originalData: any): any {
     try {
       // Extract safe elements from original data
@@ -258,7 +259,7 @@ export class TimelineStorageService {
   
   /**
    * Get minimal fallback data structure (last resort)
-   */
+    */
   private getMinimalFallbackData(): any {
     return {
       events: [],

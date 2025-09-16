@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Certification Service
  * 
  * Service for managing certification badges, badge issuance, validation,
  * and certification-related operations within the workflow system.
- */
+  */
 
 import { CertificationBadge, BadgeType, BadgeStatus } from '../../types/Certification';
 
@@ -11,7 +12,7 @@ export class CertificationService {
 
   /**
    * Issue a certification badge to a user
-   */
+    */
   async issueBadge(
     userId: string, 
     badgeType: BadgeType, 
@@ -24,7 +25,7 @@ export class CertificationService {
 
   /**
    * Get all certification badges for a user
-   */
+    */
   async getUserBadges(userId: string): Promise<CertificationBadge[]> {
     // TODO: Implement user badges retrieval
     throw new Error('Method not implemented - pending migration');
@@ -32,7 +33,7 @@ export class CertificationService {
 
   /**
    * Get a specific certification badge
-   */
+    */
   async getBadge(badgeId: string): Promise<CertificationBadge | null> {
     // TODO: Implement single badge retrieval
     throw new Error('Method not implemented - pending migration');
@@ -40,7 +41,7 @@ export class CertificationService {
 
   /**
    * Verify a certification badge
-   */
+    */
   async verifyBadge(badgeId: string, verificationCode?: string): Promise<{
     valid: boolean;
     badge?: CertificationBadge;
@@ -52,7 +53,7 @@ export class CertificationService {
 
   /**
    * Revoke a certification badge
-   */
+    */
   async revokeBadge(badgeId: string, reason: string): Promise<void> {
     // TODO: Implement badge revocation logic
     throw new Error('Method not implemented - pending migration');
@@ -60,7 +61,7 @@ export class CertificationService {
 
   /**
    * Get available badge types
-   */
+    */
   async getAvailableBadgeTypes(): Promise<Array<{
     type: BadgeType;
     name: string;
@@ -75,7 +76,7 @@ export class CertificationService {
 
   /**
    * Check if user qualifies for a badge
-   */
+    */
   async checkBadgeEligibility(userId: string, badgeType: BadgeType): Promise<{
     eligible: boolean;
     progress?: number;
@@ -87,7 +88,7 @@ export class CertificationService {
 
   /**
    * Generate badge verification URL
-   */
+    */
   async generateVerificationUrl(badgeId: string): Promise<string> {
     // TODO: Implement verification URL generation
     throw new Error('Method not implemented - pending migration');
@@ -95,7 +96,7 @@ export class CertificationService {
 
   /**
    * Get badge statistics for a user
-   */
+    */
   async getUserBadgeStatistics(userId: string): Promise<{
     totalBadges: number;
     badgesByType: Record<BadgeType, number>;
@@ -111,7 +112,7 @@ export class CertificationService {
 
   /**
    * Get certification leaderboard
-   */
+    */
   async getCertificationLeaderboard(badgeType?: BadgeType, limit: number = 10): Promise<Array<{
     userId: string;
     username: string;
@@ -124,7 +125,7 @@ export class CertificationService {
 
   /**
    * Export badges for a user (for external verification)
-   */
+    */
   async exportUserBadges(userId: string, format: 'json' | 'pdf' | 'blockchain'): Promise<string | Buffer> {
     // TODO: Implement badge export functionality
     throw new Error('Method not implemented - pending migration');
@@ -132,7 +133,7 @@ export class CertificationService {
 
   /**
    * Get certification analytics
-   */
+    */
   async getCertificationAnalytics(): Promise<{
     totalBadgesIssued: number;
     badgesByType: Record<BadgeType, number>;

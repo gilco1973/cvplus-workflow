@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Processor Core Service
  * Core CV data processing orchestrator
- */
+  */
 
 import { ParsedCV } from '../../../types/enhanced-models';
 import { TimelineEvent } from '../types/timeline.types';
@@ -11,7 +12,7 @@ export class TimelineProcessorCoreService {
   
   /**
    * Process CV data into timeline events with comprehensive error handling
-   */
+    */
   async processCV(parsedCV: ParsedCV): Promise<TimelineEvent[]> {
     const events: TimelineEvent[] = [];
     let processingErrors = 0;

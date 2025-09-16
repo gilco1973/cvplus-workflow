@@ -1,4 +1,5 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Role-Template Integration Service
  * 
  * Connects the role system with the template system in CVPlus to provide
@@ -7,7 +8,7 @@
  * @author Gil Klainert
  * @created 2025-08-22
  * @version 1.0
- */
+  */
 
 import { logger } from 'firebase-functions';
 import * as admin from 'firebase-admin';
@@ -31,65 +32,65 @@ import { TemplateCustomizationService } from './template-customization.service';
 
 /**
  * Template recommendation based on role analysis
- */
+  */
 export interface TemplateRecommendation {
-  /** Template identifier */
+  /** Template identifier  */
   templateId: string;
   
-  /** Template name */
+  /** Template name  */
   templateName: string;
   
-  /** Template category */
+  /** Template category  */
   category: PortalTemplateCategory;
   
-  /** Confidence score (0-1) */
+  /** Confidence score (0-1)  */
   confidence: number;
   
-  /** Recommendation priority (1 = highest) */
+  /** Recommendation priority (1 = highest)  */
   priority: number;
   
-  /** Reasoning for recommendation */
+  /** Reasoning for recommendation  */
   reasoning: string;
   
-  /** Specific customizations for this role */
+  /** Specific customizations for this role  */
   customizations: TemplateCustomizations;
   
-  /** Alternative template options */
+  /** Alternative template options  */
   alternatives?: string[];
 }
 
 /**
  * Template customizations specific to a role
- */
+  */
 export interface TemplateCustomizations {
-  /** Primary color adjustments */
+  /** Primary color adjustments  */
   primaryColor?: string;
   
-  /** Secondary color adjustments */
+  /** Secondary color adjustments  */
   secondaryColor?: string;
   
-  /** Typography preferences */
+  /** Typography preferences  */
   typography?: {
     headingFont?: string;
     bodyFont?: string;
     fontSize?: 'small' | 'medium' | 'large';
   };
   
-  /** Section priorities */
+  /** Section priorities  */
   sectionPriorities: {
     section: PortalSection;
     priority: number;
     emphasis: 'high' | 'medium' | 'low';
   }[];
   
-  /** Layout preferences */
+  /** Layout preferences  */
   layoutPreferences: {
     density: 'compact' | 'comfortable' | 'spacious';
     sidebarPosition?: 'left' | 'right' | 'none';
     headerStyle: 'minimal' | 'detailed' | 'hero';
   };
   
-  /** Content adjustments */
+  /** Content adjustments  */
   contentAdjustments: {
     highlightSkills: boolean;
     emphasizeExperience: boolean;
@@ -100,9 +101,9 @@ export interface TemplateCustomizations {
 
 /**
  * Optimized template configuration for a specific role
- */
+  */
 export interface OptimizedTemplate extends PortalTemplate {
-  /** Role-specific optimizations applied */
+  /** Role-specific optimizations applied  */
   roleOptimizations: {
     roleId: string;
     roleName: string;
@@ -110,10 +111,10 @@ export interface OptimizedTemplate extends PortalTemplate {
     appliedCustomizations: TemplateCustomizations;
   };
   
-  /** Enhanced theme for the role */
+  /** Enhanced theme for the role  */
   enhancedTheme?: PortalTheme;
   
-  /** Metadata about optimization */
+  /** Metadata about optimization  */
   optimizationMetadata: {
     optimizedAt: Date;
     confidence: number;
@@ -123,7 +124,7 @@ export interface OptimizedTemplate extends PortalTemplate {
 
 /**
  * Role-Template mapping configuration
- */
+  */
 export interface RoleTemplateMap {
   [roleId: string]: {
     primaryTemplate: string;
@@ -135,21 +136,21 @@ export interface RoleTemplateMap {
 
 /**
  * Service configuration
- */
+  */
 export interface RoleTemplateIntegrationConfig {
-  /** Enable caching of mappings */
+  /** Enable caching of mappings  */
   enableCaching: boolean;
   
-  /** Cache timeout in milliseconds */
+  /** Cache timeout in milliseconds  */
   cacheTimeout: number;
   
-  /** Maximum recommendations to return */
+  /** Maximum recommendations to return  */
   maxRecommendations: number;
   
-  /** Minimum confidence threshold */
+  /** Minimum confidence threshold  */
   minConfidenceThreshold: number;
   
-  /** Enable AI-powered optimization */
+  /** Enable AI-powered optimization  */
   enableAIOptimization: boolean;
 }
 
@@ -167,7 +168,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Static role-template mappings
-   */
+    */
   private static readonly ROLE_TEMPLATE_MAPPINGS: Record<string, {
     primary: PortalTemplateCategory;
     alternatives: PortalTemplateCategory[];
@@ -287,7 +288,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Role-specific color schemes
-   */
+    */
   private static readonly ROLE_COLOR_SCHEMES: Record<string, {
     primary: string;
     secondary: string;
@@ -334,7 +335,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Get recommended templates for a specific role
-   */
+    */
   async getRecommendedTemplates(roleId: string): Promise<TemplateRecommendation[]> {
     logger.info('[ROLE-TEMPLATE-INTEGRATION] Getting template recommendations', { roleId });
 
@@ -384,7 +385,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Optimize a template for a specific role
-   */
+    */
   async optimizeTemplateForRole(templateId: string, roleId: string): Promise<OptimizedTemplate> {
     logger.info('[ROLE-TEMPLATE-INTEGRATION] Optimizing template for role', { templateId, roleId });
 
@@ -423,7 +424,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Get complete role-template mapping
-   */
+    */
   async getRoleTemplateMapping(): Promise<RoleTemplateMap> {
     logger.info('[ROLE-TEMPLATE-INTEGRATION] Getting role-template mapping');
 
@@ -475,7 +476,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Get template customizations for a specific role
-   */
+    */
   async getTemplateCustomizations(roleId: string, templateId: string): Promise<TemplateCustomizations> {
     logger.info('[ROLE-TEMPLATE-INTEGRATION] Getting template customizations', { roleId, templateId });
 
@@ -511,7 +512,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Batch get recommendations for multiple roles
-   */
+    */
   async batchGetRecommendations(roleIds: string[]): Promise<Map<string, TemplateRecommendation[]>> {
     logger.info('[ROLE-TEMPLATE-INTEGRATION] Batch getting recommendations', {
       roleCount: roleIds.length
@@ -915,7 +916,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Clear cache
-   */
+    */
   clearCache(): void {
     this.cache.clear();
     this.lastCacheUpdate = 0;
@@ -924,7 +925,7 @@ export class RoleTemplateIntegrationService {
 
   /**
    * Get service status
-   */
+    */
   getStatus(): {
     service: string;
     cacheEnabled: boolean;

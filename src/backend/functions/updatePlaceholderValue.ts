@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * updatePlaceholderValue Firebase Function
  * 
  * Handles real-time placeholder value updates for inline editing in CV preview.
  * Updates the specific placeholder value in the CV data and maintains data integrity.
- */
+  */
 
 import { onCall, HttpsError } from 'firebase-functions/v2/https';
 import * as admin from 'firebase-admin';

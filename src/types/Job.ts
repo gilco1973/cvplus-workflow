@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Job-related type definitions for the CVPlus Workflow module
- */
+  */
 
 export type JobStatus = 
   | 'pending'

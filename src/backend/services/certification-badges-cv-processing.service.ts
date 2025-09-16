@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Certification badges service placeholder
- */
+  */
 export class CertificationBadgesService {
   async generateBadges(certifications: any[]) {
     return certifications.map(cert => ({ ...cert, badgeUrl: "placeholder" }));

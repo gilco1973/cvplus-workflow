@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Calendar Integration Service
  * Sync career milestones with Google Calendar, Outlook, and iCal
- */
+  */
 
 import { ParsedCV } from '../types/enhanced-models';
 import * as admin from 'firebase-admin';
@@ -51,7 +52,7 @@ export class CalendarIntegrationService {
   
   /**
    * Generate calendar events from CV data
-   */
+    */
   async generateCalendarEvents(parsedCV: ParsedCV, _jobId: string): Promise<CalendarEvent[]> {
     const events: CalendarEvent[] = [];
     
@@ -209,7 +210,7 @@ export class CalendarIntegrationService {
   
   /**
    * Create Google Calendar integration using stored user tokens
-   */
+    */
   async createGoogleCalendarIntegration(
     events: CalendarEvent[],
     jobId: string,
@@ -316,7 +317,7 @@ export class CalendarIntegrationService {
   
   /**
    * Create iCal file for download
-   */
+    */
   async createICalFile(events: CalendarEvent[], cvData: ParsedCV, jobId: string): Promise<CalendarIntegration> {
     const cal = ical({
       name: 'Career Milestones - CVPlus',
@@ -395,7 +396,7 @@ export class CalendarIntegrationService {
   
   /**
    * Create Outlook calendar integration
-   */
+    */
   async createOutlookIntegration(
     events: CalendarEvent[],
     jobId: string,
@@ -511,7 +512,7 @@ export class CalendarIntegrationService {
   
   /**
    * Helper methods
-   */
+    */
   
   private parseDate(dateStr: string): Date {
     const date = new Date(dateStr);
@@ -602,7 +603,7 @@ export class CalendarIntegrationService {
   
   /**
    * Create a Google Calendar meeting invitation
-   */
+    */
   async createMeetingInvite(
     attendeeEmail: string,
     duration: number,
@@ -647,7 +648,7 @@ export class CalendarIntegrationService {
 
   /**
    * Store calendar data in Firestore
-   */
+    */
   async storeCalendarData(jobId: string, calendarData: any): Promise<void> {
     await admin.firestore()
       .collection('jobs')

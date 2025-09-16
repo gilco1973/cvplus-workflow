@@ -1,11 +1,12 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Job Processing Service for Firebase Functions
  * 
  * Handles CV data retrieval and processing for recommendations system.
  * 
  * @author Gil Klainert
  * @version 1.0.0
- */
+  */
 
 import { getFirestore } from 'firebase-admin/firestore';
 import type { CVParsedData } from '@cvplus/core';
@@ -14,7 +15,7 @@ const db = getFirestore();
 
 /**
  * Get CV data for a specific job and user
- */
+  */
 export async function getJobData(jobId: string, userId: string): Promise<CVParsedData | null> {
   try {
     console.log(`[JobProcessing] Retrieving CV data for job ${jobId}, user ${userId}`);
@@ -55,7 +56,7 @@ export async function getJobData(jobId: string, userId: string): Promise<CVParse
 
 /**
  * Create mock CV data for development/testing purposes
- */
+  */
 function createMockCVData(): CVParsedData {
   return {
     personalInfo: {

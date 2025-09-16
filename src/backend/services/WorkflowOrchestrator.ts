@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Workflow Orchestrator Service
  * 
  * Central orchestrator for managing CV workflow processes including
  * job coordination, feature completion tracking, and workflow state management.
- */
+  */
 
 import { Job, JobStatus, WorkflowState } from '../../types/Job';
 import { Feature, FeatureStatus } from '../../types/Feature';
@@ -21,7 +22,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Initialize a new workflow for a job
-   */
+    */
   async initializeWorkflow(jobId: string, features: Feature[]): Promise<WorkflowState> {
     // TODO: Implement workflow initialization
     throw new Error('Method not implemented - pending migration');
@@ -29,7 +30,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Orchestrate the completion of a feature within a workflow
-   */
+    */
   async orchestrateFeatureCompletion(
     jobId: string, 
     featureId: string, 
@@ -41,7 +42,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Skip a feature and update workflow accordingly
-   */
+    */
   async orchestrateFeatureSkip(jobId: string, featureId: string, reason?: string): Promise<void> {
     // TODO: Implement feature skip orchestration
     throw new Error('Method not implemented - pending migration');
@@ -49,7 +50,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Get current workflow state for a job
-   */
+    */
   async getWorkflowState(jobId: string): Promise<WorkflowState> {
     // TODO: Implement workflow state retrieval
     throw new Error('Method not implemented - pending migration');
@@ -57,7 +58,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Update workflow state and trigger next steps
-   */
+    */
   async updateWorkflowState(jobId: string, updates: Partial<WorkflowState>): Promise<void> {
     // TODO: Implement workflow state updates
     throw new Error('Method not implemented - pending migration');
@@ -65,7 +66,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Check if workflow is complete
-   */
+    */
   async isWorkflowComplete(jobId: string): Promise<boolean> {
     // TODO: Implement workflow completion check
     throw new Error('Method not implemented - pending migration');
@@ -73,7 +74,7 @@ export class WorkflowOrchestrator {
 
   /**
    * Get workflow progress summary
-   */
+    */
   async getWorkflowProgress(jobId: string): Promise<{
     totalFeatures: number;
     completedFeatures: number;

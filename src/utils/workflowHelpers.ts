@@ -1,13 +1,14 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Workflow helper functions for the CVPlus Workflow module
- */
+  */
 
 import { Job, JobStatus, JobProgress, WorkflowState } from '../types/Job';
 import { Feature, FeatureStatus } from '../types/Feature';
 
 /**
  * Calculate job progress based on features
- */
+  */
 export const calculateJobProgress = (features: Feature[]): JobProgress => {
   const totalFeatures = features.length;
   const completedFeatures = features.filter(f => f.status === 'completed').length;
@@ -26,7 +27,7 @@ export const calculateJobProgress = (features: Feature[]): JobProgress => {
 
 /**
  * Determine job status based on features
- */
+  */
 export const determineJobStatus = (features: Feature[]): JobStatus => {
   if (features.length === 0) return 'pending';
   
@@ -43,14 +44,14 @@ export const determineJobStatus = (features: Feature[]): JobStatus => {
 
 /**
  * Check if a feature can be executed based on dependencies
- */
+  */
 export const canExecuteFeature = (feature: Feature, completedFeatures: string[]): boolean => {
   return feature.dependencies.every(depId => completedFeatures.includes(depId));
 };
 
 /**
  * Get next executable features based on dependencies
- */
+  */
 export const getNextExecutableFeatures = (
   features: Feature[], 
   completedFeatureIds: string[]
@@ -70,7 +71,7 @@ export const getNextExecutableFeatures = (
 
 /**
  * Validate feature dependencies
- */
+  */
 export const validateFeatureDependencies = (features: Feature[]): {
   valid: boolean;
   errors: string[];
@@ -133,7 +134,7 @@ export const validateFeatureDependencies = (features: Feature[]): {
 
 /**
  * Estimate completion time for a job
- */
+  */
 export const estimateCompletionTime = (features: Feature[]): Date | null => {
   const pendingFeatures = features.filter(f => f.status === 'pending');
   if (pendingFeatures.length === 0) return null;
@@ -148,7 +149,7 @@ export const estimateCompletionTime = (features: Feature[]): Date | null => {
 
 /**
  * Calculate workflow completion percentage
- */
+  */
 export const calculateWorkflowCompletion = (workflowState: WorkflowState): number => {
   const { totalSteps, completedSteps } = workflowState;
   if (totalSteps === 0) return 0;
@@ -157,14 +158,14 @@ export const calculateWorkflowCompletion = (workflowState: WorkflowState): numbe
 
 /**
  * Check if workflow is blocked
- */
+  */
 export const isWorkflowBlocked = (workflowState: WorkflowState): boolean => {
   return workflowState.blockedSteps.length > 0 && workflowState.nextSteps.length === 0;
 };
 
 /**
  * Get workflow bottlenecks
- */
+  */
 export const getWorkflowBottlenecks = (features: Feature[]): Feature[] => {
   return features
     .filter(f => f.status === 'processing')
@@ -181,7 +182,7 @@ export const getWorkflowBottlenecks = (features: Feature[]): Feature[] => {
 
 /**
  * Generate feature execution plan
- */
+  */
 export const generateExecutionPlan = (features: Feature[]): Array<{
   phase: number;
   features: Feature[];
@@ -221,7 +222,7 @@ export const generateExecutionPlan = (features: Feature[]): Array<{
 
 /**
  * Format duration for display
- */
+  */
 export const formatDuration = (minutes: number): string => {
   if (minutes < 60) return `${minutes}m`;
   
@@ -234,7 +235,7 @@ export const formatDuration = (minutes: number): string => {
 
 /**
  * Generate workflow summary
- */
+  */
 export const generateWorkflowSummary = (job: Job, features: Feature[]): {
   status: JobStatus;
   progress: JobProgress;

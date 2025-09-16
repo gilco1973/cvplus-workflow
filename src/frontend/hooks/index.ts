@@ -1,8 +1,9 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * CVPlus Workflow Module - Frontend Hooks Export
  * 
  * This module exports all workflow-related React hooks
- */
+  */
 
 // Workflow Monitoring Hooks
 export { useWorkflowMonitoring } from './useWorkflowMonitoring';

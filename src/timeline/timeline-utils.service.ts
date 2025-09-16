@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Utilities Service
  * Main orchestrator for timeline utility functions
- */
+  */
 
 import { ParsedCV } from '../../../types/enhanced-models';
 import { TimelineEvent, TimelineData } from '../types/timeline.types';
@@ -11,42 +12,42 @@ export class TimelineUtilsService {
   
   /**
    * Parse date string to Date object with comprehensive error handling
-   */
+    */
   parseDate(dateStr: string): Date {
     return timelineUtilsCoreService.parseDate(dateStr);
   }
   
   /**
    * Check if date represents recent/current position
-   */
+    */
   isRecent(dateStr: string): boolean {
     return timelineUtilsCoreService.isRecent(dateStr);
   }
   
   /**
    * Estimate education start date
-   */
+    */
   estimateEducationStartDate(edu: any): Date {
     return timelineUtilsCoreService.estimateEducationStartDate(edu);
   }
   
   /**
    * Extract impact metrics from achievements
-   */
+    */
   extractImpactMetrics(achievements: string[]): { metric: string; value: string }[] {
     return timelineUtilsCoreService.extractImpactMetrics(achievements);
   }
   
   /**
    * Extract achievement title
-   */
+    */
   extractAchievementTitle(achievement: string): string {
     return timelineUtilsCoreService.extractAchievementTitle(achievement);
   }
   
   /**
    * Extract organization from achievement
-   */
+    */
   extractAchievementOrg(achievement: string, cv: ParsedCV): string {
     if (!achievement || typeof achievement !== 'string') return 'Achievement';
     
@@ -81,7 +82,7 @@ export class TimelineUtilsService {
   
   /**
    * Generate summary data
-   */
+    */
   generateSummary(events: TimelineEvent[], cv: ParsedCV): TimelineData['summary'] {
     try {
       const workEvents = events.filter(e => e?.type === 'work');

@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Template Service
  * 
  * Service for managing CV templates, template metadata, and template operations
  * within the workflow system.
- */
+  */
 
 import { CVTemplate, TemplateMetadata, TemplateCategory } from '../../types/Template';
 
@@ -11,7 +12,7 @@ export class TemplateService {
 
   /**
    * Get all available CV templates
-   */
+    */
   async getTemplates(filters?: {
     category?: TemplateCategory;
     featured?: boolean;
@@ -23,7 +24,7 @@ export class TemplateService {
 
   /**
    * Get a specific template by ID
-   */
+    */
   async getTemplate(templateId: string): Promise<CVTemplate | null> {
     // TODO: Implement single template retrieval
     throw new Error('Method not implemented - pending migration');
@@ -31,7 +32,7 @@ export class TemplateService {
 
   /**
    * Get templates by category
-   */
+    */
   async getTemplatesByCategory(category: TemplateCategory): Promise<CVTemplate[]> {
     // TODO: Implement category-based template filtering
     throw new Error('Method not implemented - pending migration');
@@ -39,7 +40,7 @@ export class TemplateService {
 
   /**
    * Get featured templates
-   */
+    */
   async getFeaturedTemplates(): Promise<CVTemplate[]> {
     // TODO: Implement featured templates retrieval
     throw new Error('Method not implemented - pending migration');
@@ -47,7 +48,7 @@ export class TemplateService {
 
   /**
    * Get premium templates
-   */
+    */
   async getPremiumTemplates(): Promise<CVTemplate[]> {
     // TODO: Implement premium templates retrieval
     throw new Error('Method not implemented - pending migration');
@@ -55,7 +56,7 @@ export class TemplateService {
 
   /**
    * Search templates by keywords
-   */
+    */
   async searchTemplates(query: string): Promise<CVTemplate[]> {
     // TODO: Implement template search functionality
     throw new Error('Method not implemented - pending migration');
@@ -63,7 +64,7 @@ export class TemplateService {
 
   /**
    * Get template metadata
-   */
+    */
   async getTemplateMetadata(templateId: string): Promise<TemplateMetadata | null> {
     // TODO: Implement template metadata retrieval
     throw new Error('Method not implemented - pending migration');
@@ -71,7 +72,7 @@ export class TemplateService {
 
   /**
    * Get template preview URL
-   */
+    */
   async getTemplatePreview(templateId: string): Promise<string> {
     // TODO: Implement template preview URL generation
     throw new Error('Method not implemented - pending migration');
@@ -79,7 +80,7 @@ export class TemplateService {
 
   /**
    * Check template compatibility with user subscription
-   */
+    */
   async checkTemplateAccess(templateId: string, userId: string): Promise<{
     hasAccess: boolean;
     reason?: string;
@@ -91,7 +92,7 @@ export class TemplateService {
 
   /**
    * Get recommended templates for a user
-   */
+    */
   async getRecommendedTemplates(userId: string): Promise<CVTemplate[]> {
     // TODO: Implement personalized template recommendations
     throw new Error('Method not implemented - pending migration');
@@ -99,7 +100,7 @@ export class TemplateService {
 
   /**
    * Track template usage analytics
-   */
+    */
   async trackTemplateUsage(templateId: string, userId: string, action: 'view' | 'select' | 'download'): Promise<void> {
     // TODO: Implement template usage tracking
     throw new Error('Method not implemented - pending migration');
@@ -107,7 +108,7 @@ export class TemplateService {
 
   /**
    * Get template usage statistics
-   */
+    */
   async getTemplateStatistics(): Promise<{
     totalTemplates: number;
     templatesByCategory: Record<TemplateCategory, number>;
@@ -124,7 +125,7 @@ export class TemplateService {
 
   /**
    * Validate template structure
-   */
+    */
   validateTemplate(template: CVTemplate): {
     valid: boolean;
     errors: string[];

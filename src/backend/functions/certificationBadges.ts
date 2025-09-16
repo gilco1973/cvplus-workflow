@@ -10,7 +10,7 @@ import { CertificationService } from '../services/CertificationService';
  * 
  * @param request - HTTP request for certification badge operations
  * @param response - HTTP response with badge management results
- */
+  */
 export const certificationBadges: HttpsFunction = onRequest(
   { cors: true },
   async (request, response) => {

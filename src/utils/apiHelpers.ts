@@ -1,12 +1,13 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * API helper functions for the CVPlus Workflow module
- */
+  */
 
 import { API_CONFIG, HTTP_STATUS } from '../constants';
 
 /**
  * API Response interface
- */
+  */
 export interface ApiResponse<T = any> {
   data?: T;
   error?: string;
@@ -16,7 +17,7 @@ export interface ApiResponse<T = any> {
 
 /**
  * API Request options
- */
+  */
 export interface ApiRequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
   headers?: Record<string, string>;
@@ -27,7 +28,7 @@ export interface ApiRequestOptions {
 
 /**
  * Build full API URL
- */
+  */
 export const buildApiUrl = (endpoint: string, params?: Record<string, string>): string => {
   let url = `${API_CONFIG.BASE_URL}/${API_CONFIG.VERSION}${endpoint}`;
   
@@ -43,7 +44,7 @@ export const buildApiUrl = (endpoint: string, params?: Record<string, string>): 
 
 /**
  * Add query parameters to URL
- */
+  */
 export const addQueryParams = (url: string, params: Record<string, any>): string => {
   const urlObj = new URL(url);
   
@@ -62,7 +63,7 @@ export const addQueryParams = (url: string, params: Record<string, any>): string
 
 /**
  * Make API request with retry logic
- */
+  */
 export const makeApiRequest = async <T = any>(
   endpoint: string,
   options: ApiRequestOptions = {},
@@ -144,7 +145,7 @@ export const makeApiRequest = async <T = any>(
 
 /**
  * Get request with automatic retry
- */
+  */
 export const apiGet = <T = any>(
   endpoint: string,
   pathParams?: Record<string, string>,
@@ -156,7 +157,7 @@ export const apiGet = <T = any>(
 
 /**
  * Post request with automatic retry
- */
+  */
 export const apiPost = <T = any>(
   endpoint: string,
   body: any,
@@ -168,7 +169,7 @@ export const apiPost = <T = any>(
 
 /**
  * Put request with automatic retry
- */
+  */
 export const apiPut = <T = any>(
   endpoint: string,
   body: any,
@@ -180,7 +181,7 @@ export const apiPut = <T = any>(
 
 /**
  * Patch request with automatic retry
- */
+  */
 export const apiPatch = <T = any>(
   endpoint: string,
   body: any,
@@ -192,7 +193,7 @@ export const apiPatch = <T = any>(
 
 /**
  * Delete request with automatic retry
- */
+  */
 export const apiDelete = <T = any>(
   endpoint: string,
   pathParams?: Record<string, string>,
@@ -203,21 +204,21 @@ export const apiDelete = <T = any>(
 
 /**
  * Check if response is successful
- */
+  */
 export const isSuccessResponse = (response: ApiResponse): boolean => {
   return response.success && response.status >= 200 && response.status < 300;
 };
 
 /**
  * Check if error is retryable
- */
+  */
 export const isRetryableError = (status: number): boolean => {
   return status >= 500 || status === 429 || status === 0;
 };
 
 /**
  * Extract error message from API response
- */
+  */
 export const extractErrorMessage = (response: ApiResponse): string => {
   if (response.error) return response.error;
   
@@ -247,7 +248,7 @@ export const extractErrorMessage = (response: ApiResponse): string => {
 
 /**
  * Format API error for user display
- */
+  */
 export const formatApiError = (response: ApiResponse): string => {
   const message = extractErrorMessage(response);
   const isServerError = response.status >= 500;
@@ -261,7 +262,7 @@ export const formatApiError = (response: ApiResponse): string => {
 
 /**
  * Create pagination parameters
- */
+  */
 export const createPaginationParams = (page: number = 1, limit: number = 10): Record<string, any> => {
   return {
     page: Math.max(1, page),
@@ -272,7 +273,7 @@ export const createPaginationParams = (page: number = 1, limit: number = 10): Re
 
 /**
  * Create sorting parameters
- */
+  */
 export const createSortingParams = (
   sortBy?: string, 
   sortOrder: 'asc' | 'desc' = 'desc'

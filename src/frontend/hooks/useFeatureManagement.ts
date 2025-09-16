@@ -15,7 +15,7 @@ interface UseFeatureManagementResult {
  * 
  * Provides methods for interacting with the feature management system
  * within workflows, including completion and skip functionality.
- */
+  */
 export const useFeatureManagement = (jobId: string): UseFeatureManagementResult => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

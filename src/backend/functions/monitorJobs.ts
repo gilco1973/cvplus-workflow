@@ -11,7 +11,7 @@ import { WorkflowOrchestrator } from '../services/WorkflowOrchestrator';
  * 
  * @param request - HTTP request for job monitoring
  * @param response - HTTP response with job monitoring data
- */
+  */
 export const monitorJobs: HttpsFunction = onRequest(
   { cors: true },
   async (request, response) => {

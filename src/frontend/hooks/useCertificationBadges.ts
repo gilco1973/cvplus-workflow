@@ -21,7 +21,7 @@ interface UseCertificationBadgesResult {
  * 
  * Provides access to user badges, progress tracking, verification,
  * and badge-related operations within the workflow system.
- */
+  */
 export const useCertificationBadges = (userId: string): UseCertificationBadgesResult => {
   const [badges, setBadges] = useState<CertificationBadge[]>([]);
   const [badgeProgress, setBadgeProgress] = useState<BadgeProgress[]>([]);

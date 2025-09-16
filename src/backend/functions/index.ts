@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * CVPlus Workflow Module - Firebase Functions Export
  * 
  * This module exports all workflow-related Firebase functions
  * that will be migrated from the main functions directory.
- */
+  */
 
 // Job Management Functions
 export { injectCompletedFeatures } from './injectCompletedFeatures';

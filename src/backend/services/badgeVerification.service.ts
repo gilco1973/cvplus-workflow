@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Badge Verification Service
  * Integrates with digital badge providers for certification verification
  * Author: Gil Klainert
  * Date: 2025-08-22
- */
+  */
 
 import { https } from 'firebase-functions';
 import * as admin from 'firebase-admin';
@@ -39,7 +40,7 @@ export class BadgeVerificationService {
 
   /**
    * Verify a badge with its provider
-   */
+    */
   async verifyBadge(badgeUrl: string, provider: string): Promise<VerificationResult> {
     try {
       let result: VerificationResult;
@@ -70,7 +71,7 @@ export class BadgeVerificationService {
 
   /**
    * Verify Credly badge
-   */
+    */
   private async verifyCredlyBadge(badgeUrl: string): Promise<VerificationResult> {
     try {
       // Extract badge ID from URL
@@ -122,7 +123,7 @@ export class BadgeVerificationService {
 
   /**
    * Verify Accredible badge
-   */
+    */
   private async verifyAccredibleBadge(badgeUrl: string): Promise<VerificationResult> {
     try {
       // Extract credential ID from URL
@@ -174,7 +175,7 @@ export class BadgeVerificationService {
 
   /**
    * Verify Badgr badge
-   */
+    */
   private async verifyBadgrBadge(badgeUrl: string): Promise<VerificationResult> {
     try {
       // Extract assertion ID from URL
@@ -226,7 +227,7 @@ export class BadgeVerificationService {
 
   /**
    * Verify custom badge (generic verification)
-   */
+    */
   private async verifyCustomBadge(badgeUrl: string): Promise<VerificationResult> {
     try {
       // Attempt to fetch badge metadata
@@ -268,7 +269,7 @@ export class BadgeVerificationService {
 
   /**
    * Extract badge ID from URL based on provider
-   */
+    */
   private extractBadgeId(url: string, provider: string): string {
     const patterns: Record<string, RegExp> = {
       credly: /badges\/([a-f0-9-]+)/,
@@ -286,7 +287,7 @@ export class BadgeVerificationService {
 
   /**
    * Generate badge ID for custom badges
-   */
+    */
   private generateBadgeId(url: string): string {
     const crypto = require('crypto');
     return crypto.createHash('md5').update(url).digest('hex');
@@ -294,7 +295,7 @@ export class BadgeVerificationService {
 
   /**
    * Check if expiry date is valid
-   */
+    */
   private isDateValid(expiryDate?: string): boolean {
     if (!expiryDate) return true;
     return new Date(expiryDate) > new Date();
@@ -302,7 +303,7 @@ export class BadgeVerificationService {
 
   /**
    * Store verification result in Firestore
-   */
+    */
   private async storeVerificationResult(result: VerificationResult): Promise<void> {
     const verificationDoc = {
       ...result,
@@ -314,7 +315,7 @@ export class BadgeVerificationService {
 
   /**
    * Get user's verified badges
-   */
+    */
   async getUserBadges(userId: string): Promise<Badge[]> {
     const snapshot = await this.db
       .collection('users')
@@ -328,7 +329,7 @@ export class BadgeVerificationService {
 
   /**
    * Add badge to user profile
-   */
+    */
   async addBadgeToProfile(userId: string, badge: Badge): Promise<void> {
     await this.db
       .collection('users')
@@ -343,7 +344,7 @@ export class BadgeVerificationService {
 
   /**
    * Remove badge from user profile
-   */
+    */
   async removeBadgeFromProfile(userId: string, badgeId: string): Promise<void> {
     await this.db
       .collection('users')
@@ -355,7 +356,7 @@ export class BadgeVerificationService {
 
   /**
    * Batch verify multiple badges
-   */
+    */
   async batchVerifyBadges(badges: Array<{url: string, provider: string}>): Promise<VerificationResult[]> {
     const verificationPromises = badges.map(badge => 
       this.verifyBadge(badge.url, badge.provider)
@@ -366,7 +367,7 @@ export class BadgeVerificationService {
 
   /**
    * Check if badge needs reverification
-   */
+    */
   async needsReverification(badge: Badge): Promise<boolean> {
     // Check if last verification was more than 30 days ago
     const lastVerification = await this.db

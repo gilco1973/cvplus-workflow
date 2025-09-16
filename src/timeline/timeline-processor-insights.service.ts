@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Processor Insights Service
  * Handles analysis and insight generation from timeline events
- */
+  */
 
 import { ParsedCV } from '../../../types/enhanced-models';
 import { TimelineEvent, TimelineData } from '../types/timeline.types';
@@ -10,7 +11,7 @@ export class TimelineProcessorInsightsService {
   
   /**
    * Generate career insights
-   */
+    */
   async generateInsights(events: TimelineEvent[], cv: ParsedCV): Promise<TimelineData['insights']> {
     try {
       const workEvents = events.filter(e => e?.type === 'work');
@@ -49,7 +50,7 @@ export class TimelineProcessorInsightsService {
   
   /**
    * Identify industries from work experience
-   */
+    */
   private identifyIndustries(workEvents: TimelineEvent[]): string[] {
     const industries = new Set<string>();
     const industryKeywords: Record<string, string[]> = {
@@ -75,7 +76,7 @@ export class TimelineProcessorInsightsService {
   
   /**
    * Analyze skill evolution over time
-   */
+    */
   private analyzeSkillEvolution(events: TimelineEvent[]): string {
     const workEvents = events.filter(e => e?.type === 'work');
     
@@ -106,7 +107,7 @@ export class TimelineProcessorInsightsService {
   
   /**
    * Suggest next career steps
-   */
+    */
   private suggestNextSteps(events: TimelineEvent[], cv: ParsedCV): string[] {
     const suggestions: string[] = [];
     const workEvents = events.filter(e => e?.type === 'work');
@@ -162,7 +163,7 @@ export class TimelineProcessorInsightsService {
   
   /**
    * Helper function to safely extract technical skills from various skill formats
-   */
+    */
   private getTechnicalSkills(skills: string[] | { [key: string]: string[]; technical?: string[]; soft?: string[]; languages?: string[]; tools?: string[]; frontend?: string[]; backend?: string[]; databases?: string[]; cloud?: string[]; competencies?: string[]; frameworks?: string[]; expertise?: string[]; } | undefined): string[] {
     if (!skills) return [];
     if (Array.isArray(skills)) return skills; // Assume all are technical if it's an array

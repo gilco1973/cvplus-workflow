@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Generation Service V2 - Modular Architecture
  * Creates interactive timeline visualization from CV data with bulletproof validation
- */
+  */
 
 import { ParsedCV } from '../types/enhanced-models';
 import { TimelineEvent, TimelineData } from './types/timeline.types';
@@ -15,7 +16,7 @@ export class TimelineGenerationServiceV2 {
   
   /**
    * Generate timeline data from parsed CV with enhanced validation
-   */
+    */
   async generateTimeline(parsedCV: ParsedCV, jobId: string, shouldStore: boolean = false): Promise<TimelineData> {
     
     // Input validation
@@ -55,7 +56,7 @@ export class TimelineGenerationServiceV2 {
   
   /**
    * Validate timeline data without storing it (for testing)
-   */
+    */
   async validateTimelineData(parsedCV: ParsedCV): Promise<{ isValid: boolean; errors: string[]; data?: TimelineData }> {
     try {
       const events = await timelineProcessorService.processCV(parsedCV);

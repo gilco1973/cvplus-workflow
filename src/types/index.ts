@@ -1,8 +1,9 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * CVPlus Workflow Module - Type Definitions Export
  * 
  * This module exports all workflow-related TypeScript type definitions
- */
+  */
 
 // Job Types
 export type { Job, JobStatus, JobProgress, WorkflowState, JobMetrics, JobFilter } from './Job';

@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Service Type Definitions
  * Shared types for timeline generation and validation
- */
+  */
 
 export interface TimelineEvent {
   id: string;

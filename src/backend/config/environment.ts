@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Environment configuration for workflow module
- */
+  */
 
 export interface WorkflowConfig {
   openai: {

@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Validation helper functions for the CVPlus Workflow module
- */
+  */
 
 import { Job, JobStatus } from '../types/Job';
 import { Feature, FeatureStatus } from '../types/Feature';
@@ -9,7 +10,7 @@ import { CertificationBadge, BadgeType } from '../types/Certification';
 
 /**
  * Validation result interface
- */
+  */
 export interface ValidationResult {
   valid: boolean;
   errors: string[];
@@ -18,7 +19,7 @@ export interface ValidationResult {
 
 /**
  * Validate job data
- */
+  */
 export const validateJob = (job: Partial<Job>): ValidationResult => {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -58,7 +59,7 @@ export const validateJob = (job: Partial<Job>): ValidationResult => {
 
 /**
  * Validate feature data
- */
+  */
 export const validateFeature = (feature: Partial<Feature>): ValidationResult => {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -110,7 +111,7 @@ export const validateFeature = (feature: Partial<Feature>): ValidationResult => 
 
 /**
  * Validate template data
- */
+  */
 export const validateTemplate = (template: Partial<CVTemplate>): ValidationResult => {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -152,7 +153,7 @@ export const validateTemplate = (template: Partial<CVTemplate>): ValidationResul
 
 /**
  * Validate placeholder value
- */
+  */
 export const validatePlaceholderValue = (
   value: any, 
   expectedType: string, 
@@ -221,7 +222,7 @@ export const validatePlaceholderValue = (
 
 /**
  * Validate certification badge
- */
+  */
 export const validateCertificationBadge = (badge: Partial<CertificationBadge>): ValidationResult => {
   const errors: string[] = [];
 
@@ -264,7 +265,7 @@ export const validateCertificationBadge = (badge: Partial<CertificationBadge>): 
 
 /**
  * Validate email format
- */
+  */
 export const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -272,7 +273,7 @@ export const isValidEmail = (email: string): boolean => {
 
 /**
  * Validate URL format
- */
+  */
 export const isValidUrl = (url: string): boolean => {
   try {
     new URL(url);
@@ -284,7 +285,7 @@ export const isValidUrl = (url: string): boolean => {
 
 /**
  * Validate date string
- */
+  */
 export const isValidDateString = (dateString: any): boolean => {
   if (typeof dateString !== 'string') return false;
   const date = new Date(dateString);
@@ -293,7 +294,7 @@ export const isValidDateString = (dateString: any): boolean => {
 
 /**
  * Validate UUID format
- */
+  */
 export const isValidUuid = (uuid: string): boolean => {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   return uuidRegex.test(uuid);
@@ -301,7 +302,7 @@ export const isValidUuid = (uuid: string): boolean => {
 
 /**
  * Sanitize string input
- */
+  */
 export const sanitizeString = (input: string, maxLength?: number): string => {
   let sanitized = input.trim();
   
@@ -321,7 +322,7 @@ export const sanitizeString = (input: string, maxLength?: number): string => {
 
 /**
  * Validate batch operation size
- */
+  */
 export const validateBatchSize = (items: any[], maxSize: number = 100): ValidationResult => {
   const errors: string[] = [];
 
@@ -338,7 +339,7 @@ export const validateBatchSize = (items: any[], maxSize: number = 100): Validati
 
 /**
  * Validate pagination parameters
- */
+  */
 export const validatePagination = (page?: number, limit?: number): ValidationResult => {
   const errors: string[] = [];
 

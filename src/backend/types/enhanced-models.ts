@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Enhanced CV models for workflow processing
- */
+  */
 
 export interface ParsedCV {
   id: string;

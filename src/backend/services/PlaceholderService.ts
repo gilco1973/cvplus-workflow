@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Placeholder Service
  * 
  * Service for managing placeholder values in CV templates and job workflows,
  * including dynamic placeholder resolution and template interpolation.
- */
+  */
 
 import { PlaceholderValue, PlaceholderTemplate } from '../../types/Template';
 
@@ -11,7 +12,7 @@ export class PlaceholderService {
 
   /**
    * Update a placeholder value for a job
-   */
+    */
   async updatePlaceholderValue(
     jobId: string, 
     placeholderKey: string, 
@@ -24,7 +25,7 @@ export class PlaceholderService {
 
   /**
    * Get all placeholder values for a job
-   */
+    */
   async getPlaceholderValues(jobId: string): Promise<Record<string, PlaceholderValue>> {
     // TODO: Implement placeholder values retrieval
     throw new Error('Method not implemented - pending migration');
@@ -32,7 +33,7 @@ export class PlaceholderService {
 
   /**
    * Get a specific placeholder value
-   */
+    */
   async getPlaceholderValue(jobId: string, placeholderKey: string): Promise<PlaceholderValue | null> {
     // TODO: Implement single placeholder value retrieval
     throw new Error('Method not implemented - pending migration');
@@ -40,7 +41,7 @@ export class PlaceholderService {
 
   /**
    * Batch update multiple placeholder values
-   */
+    */
   async batchUpdatePlaceholders(
     jobId: string, 
     updates: Record<string, any>
@@ -51,7 +52,7 @@ export class PlaceholderService {
 
   /**
    * Resolve all placeholders in a template
-   */
+    */
   async resolvePlaceholders(
     jobId: string, 
     template: string | PlaceholderTemplate
@@ -62,7 +63,7 @@ export class PlaceholderService {
 
   /**
    * Get available placeholders for a template
-   */
+    */
   async getAvailablePlaceholders(templateId: string): Promise<Array<{
     key: string;
     description: string;
@@ -76,7 +77,7 @@ export class PlaceholderService {
 
   /**
    * Validate placeholder values against template requirements
-   */
+    */
   async validatePlaceholders(
     jobId: string, 
     templateId: string
@@ -95,7 +96,7 @@ export class PlaceholderService {
 
   /**
    * Get placeholder completion status
-   */
+    */
   async getPlaceholderCompletionStatus(jobId: string, templateId: string): Promise<{
     totalPlaceholders: number;
     filledPlaceholders: number;
@@ -108,7 +109,7 @@ export class PlaceholderService {
 
   /**
    * Generate default placeholder values based on user profile
-   */
+    */
   async generateDefaultPlaceholders(userId: string, templateId: string): Promise<Record<string, any>> {
     // TODO: Implement intelligent placeholder defaults
     throw new Error('Method not implemented - pending migration');
@@ -116,7 +117,7 @@ export class PlaceholderService {
 
   /**
    * Get placeholder usage statistics
-   */
+    */
   async getPlaceholderStatistics(): Promise<{
     mostUsedPlaceholders: Array<{
       key: string;

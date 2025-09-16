@@ -1,4 +1,5 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Industry-Specific Template System
  * 
  * Comprehensive templates for different industry sectors
@@ -6,7 +7,7 @@
  * 
  * @author Gil Klainert
  * @version 1.0.0
- */
+  */
 
 import { ParsedCV } from '../types/enhanced-models';
 
@@ -52,7 +53,7 @@ export interface TemplateMatchScore {
 
 /**
  * Industry Templates Service
- */
+  */
 export class IndustryTemplatesService {
   private templates: Map<string, IndustryTemplate>;
 
@@ -63,14 +64,14 @@ export class IndustryTemplatesService {
 
   /**
    * Get template by industry identifier
-   */
+    */
   getTemplate(industryId: string): IndustryTemplate | null {
     return this.templates.get(industryId) || this.templates.get('general-business');
   }
 
   /**
    * Analyze CV and recommend best industry template
-   */
+    */
   analyzeAndRecommendTemplate(cv: ParsedCV): TemplateMatchScore[] {
     const scores: TemplateMatchScore[] = [];
 
@@ -84,14 +85,14 @@ export class IndustryTemplatesService {
 
   /**
    * Get all available templates
-   */
+    */
   getAllTemplates(): IndustryTemplate[] {
     return Array.from(this.templates.values());
   }
 
   /**
    * Calculate how well a CV matches an industry template
-   */
+    */
   private calculateTemplateMatch(cv: ParsedCV, template: IndustryTemplate): TemplateMatchScore {
     let totalScore = 0;
     const matchReasons: string[] = [];
@@ -145,7 +146,7 @@ export class IndustryTemplatesService {
 
   /**
    * Initialize all industry templates
-   */
+    */
   private initializeTemplates(): void {
     // Technology Sector Template
     this.templates.set('technology', {
@@ -492,7 +493,7 @@ export class IndustryTemplatesService {
 
   /**
    * Assessment helper methods
-   */
+    */
   private assessTechnicalAlignment(cv: ParsedCV, template: IndustryTemplate): number {
     const cvSkills = this.extractSkills(cv);
     const templateKeywords = template.commonKeywords;

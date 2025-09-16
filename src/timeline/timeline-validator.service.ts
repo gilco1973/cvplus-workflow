@@ -1,7 +1,8 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Data Validator Service
  * Handles comprehensive validation and sanitization of timeline data
- */
+  */
 
 export interface TimelineEventValidationSchema {
   required: string[];
@@ -63,7 +64,7 @@ export class TimelineValidatorService {
 
   /**
    * Validate a single field against the validation schema
-   */
+    */
   validateField(fieldName: string, value: any, metrics: DataQualityMetrics): boolean {
     try {
       // Check if field is required
@@ -105,7 +106,7 @@ export class TimelineValidatorService {
   
   /**
    * Deep sanitize array values, removing invalid elements
-   */
+    */
   sanitizeArray(arr: any[], fieldName: string, metrics: DataQualityMetrics): any[] | undefined {
     try {
       if (!Array.isArray(arr)) {
@@ -155,7 +156,7 @@ export class TimelineValidatorService {
   
   /**
    * Log data quality metrics for monitoring and debugging
-   */
+    */
   logDataQualityMetrics(metrics: DataQualityMetrics): void {
     
     const totalFieldsRemoved = Object.values(metrics.fieldsRemoved).reduce((sum, count) => sum + count, 0);

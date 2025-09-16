@@ -1,9 +1,10 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Feature Skip Service
  * 
  * Service for managing feature skipping functionality within job workflows,
  * handling skip reasons, and updating workflow state accordingly.
- */
+  */
 
 import { Feature, FeatureStatus, SkippedFeature } from '../../types/Feature';
 
@@ -11,7 +12,7 @@ export class FeatureSkipService {
 
   /**
    * Skip a feature in a job workflow
-   */
+    */
   async skipFeature(
     jobId: string, 
     featureId: string, 
@@ -24,7 +25,7 @@ export class FeatureSkipService {
 
   /**
    * Get all skipped features for a job
-   */
+    */
   async getSkippedFeatures(jobId: string): Promise<SkippedFeature[]> {
     // TODO: Implement skipped features retrieval
     throw new Error('Method not implemented - pending migration');
@@ -32,7 +33,7 @@ export class FeatureSkipService {
 
   /**
    * Check if a feature is skipped for a job
-   */
+    */
   async isFeatureSkipped(jobId: string, featureId: string): Promise<boolean> {
     // TODO: Implement feature skip check
     throw new Error('Method not implemented - pending migration');
@@ -40,7 +41,7 @@ export class FeatureSkipService {
 
   /**
    * Unskip a feature (mark as available again)
-   */
+    */
   async unskipFeature(jobId: string, featureId: string): Promise<void> {
     // TODO: Implement feature unskip logic
     throw new Error('Method not implemented - pending migration');
@@ -48,7 +49,7 @@ export class FeatureSkipService {
 
   /**
    * Get skip reasons for analytics
-   */
+    */
   async getSkipReasons(jobId?: string): Promise<{
     reason: string;
     count: number;
@@ -60,7 +61,7 @@ export class FeatureSkipService {
 
   /**
    * Check if feature can be skipped
-   */
+    */
   async canSkipFeature(jobId: string, featureId: string): Promise<{
     canSkip: boolean;
     reason?: string;
@@ -72,7 +73,7 @@ export class FeatureSkipService {
 
   /**
    * Get skip suggestions based on job context
-   */
+    */
   async getSkipSuggestions(jobId: string): Promise<{
     featureId: string;
     reason: string;
@@ -85,7 +86,7 @@ export class FeatureSkipService {
 
   /**
    * Update skip reason for an already skipped feature
-   */
+    */
   async updateSkipReason(
     jobId: string, 
     featureId: string, 
@@ -97,7 +98,7 @@ export class FeatureSkipService {
 
   /**
    * Get skip impact analysis
-   */
+    */
   async getSkipImpactAnalysis(jobId: string, featureId: string): Promise<{
     dependentFeatures: string[];
     affectedOutputs: string[];

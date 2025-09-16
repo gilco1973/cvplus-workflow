@@ -1,10 +1,11 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Timeline Generation Service - Enhanced with Bulletproof Validation
  * Creates interactive timeline visualization from CV data with comprehensive sanitization
  * 
  * This service now uses a modular architecture with enhanced validation to ensure
  * no undefined values reach Firestore storage.
- */
+  */
 
 import { ParsedCV } from '../types/enhanced-models';
 import { timelineGenerationServiceV2 } from './timeline-generation-v2.service';
@@ -50,7 +51,7 @@ export class TimelineGenerationService {
   
   /**
    * Helper function to safely extract technical skills from various skill formats
-   */
+    */
   private getTechnicalSkills(skills: string[] | { technical: string[]; soft: string[]; languages?: string[]; tools?: string[]; } | undefined): string[] {
     if (!skills) return [];
     if (Array.isArray(skills)) return skills; // Assume all are technical if it's an array
@@ -66,7 +67,7 @@ export class TimelineGenerationService {
    * - Enhanced error handling and recovery
    * - Modular architecture for maintainability
    * - Detailed logging and quality metrics
-   */
+    */
   async generateTimeline(parsedCV: ParsedCV, jobId: string): Promise<TimelineData> {
     
     try {
@@ -82,7 +83,7 @@ export class TimelineGenerationService {
   
   /**
    * Validate timeline data without storing it (for testing and validation)
-   */
+    */
   async validateTimeline(parsedCV: ParsedCV): Promise<{ isValid: boolean; errors: string[]; data?: TimelineData }> {
     
     try {

@@ -4,12 +4,12 @@ import { sanitizeForFirestore } from '../utils/firestore-sanitizer';
 
 /**
  * Comprehensive job monitoring service for detecting and resolving stuck CV generation jobs
- */
+  */
 export class JobMonitoringService {
   
   /**
    * Monitor for stuck jobs and apply recovery mechanisms
-   */
+    */
   static async monitorStuckJobs(): Promise<void> {
     
     try {
@@ -48,7 +48,7 @@ export class JobMonitoringService {
   
   /**
    * Recover a specific stuck job
-   */
+    */
   private static async recoverStuckJob(jobId: string, jobData: any): Promise<void> {
     const stuckDuration = Date.now() - (jobData.generationStartedAt?.toDate()?.getTime() || 0);
     const stuckMinutes = Math.floor(stuckDuration / (1000 * 60));
@@ -77,7 +77,7 @@ export class JobMonitoringService {
   
   /**
    * Fail job that never started feature processing
-   */
+    */
   private static async failJobWithMissingFeatures(
     jobId: string, 
     selectedFeatures: string[], 
@@ -108,7 +108,7 @@ export class JobMonitoringService {
   
   /**
    * Fail job that had partial processing
-   */
+    */
   private static async failJobWithPartialProcessing(
     jobId: string, 
     jobData: any, 
@@ -147,7 +147,7 @@ export class JobMonitoringService {
   
   /**
    * Complete job that appears finished but wasn't marked complete
-   */
+    */
   private static async completeStuckJob(
     jobId: string, 
     jobData: any, 
@@ -167,7 +167,7 @@ export class JobMonitoringService {
   
   /**
    * Fail job with unknown state
-   */
+    */
   private static async failJobWithUnknownState(
     jobId: string, 
     stuckMinutes: number
@@ -186,7 +186,7 @@ export class JobMonitoringService {
   
   /**
    * Get job processing statistics for monitoring dashboard
-   */
+    */
   static async getJobProcessingStats(): Promise<any> {
     try {
       const last24Hours = new Date(Date.now() - 24 * 60 * 60 * 1000);
@@ -231,7 +231,7 @@ export class JobMonitoringService {
   
   /**
    * Log detailed information about a specific job for debugging
-   */
+    */
   static async logJobDetails(jobId: string): Promise<void> {
     try {
       const jobDoc = await admin.firestore().collection('jobs').doc(jobId).get();

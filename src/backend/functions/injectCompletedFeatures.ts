@@ -7,7 +7,7 @@ import { CVGenerator } from '../../services/cvGenerator';
 /**
  * Cloud Function to inject completed feature HTML fragments into the generated CV
  * This function is called after features complete processing to update the CV with their content
- */
+  */
 export const injectCompletedFeatures = onCall(
   {
     timeoutSeconds: 120,
@@ -111,7 +111,7 @@ export const injectCompletedFeatures = onCall(
 
 /**
  * Get completed features that have HTML fragments ready for injection
- */
+  */
 async function getCompletedFeaturesWithFragments(jobData: any): Promise<Array<{
   featureName: string;
   // HTML fragment removed with React SPA migration
@@ -146,7 +146,7 @@ async function getCompletedFeaturesWithFragments(jobData: any): Promise<Array<{
 
 /**
  * Inject feature HTML fragments into the CV HTML at appropriate locations
- */
+  */
 async function injectFeatureFragments(
   originalHTML: string,
   features: Array<{ featureName: string; featureType: string; }> // HTML fragment removed with React SPA migration

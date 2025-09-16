@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Role Profile-related type definitions for the CVPlus Workflow module
- */
+  */
 
 export type RoleType = 
   | 'software-engineer'

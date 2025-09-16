@@ -16,7 +16,7 @@ interface UseWorkflowMonitoringResult {
  * 
  * Provides real-time updates on job progress, status changes,
  * and feature completion within workflows.
- */
+  */
 export const useWorkflowMonitoring = (jobId: string): UseWorkflowMonitoringResult => {
   const [progress, setProgress] = useState<JobProgress | null>(null);
   const [status, setStatus] = useState<JobStatus | null>(null);

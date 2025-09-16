@@ -1,4 +1,5 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Template Customization Service
  * 
  * Advanced AI-powered template customization service for CVPlus web portals.
@@ -8,7 +9,7 @@
  * @author Gil Klainert
  * @created 2025-08-19
  * @version 1.0
- */
+  */
 
 import { logger } from 'firebase-functions';
 import { VerifiedClaudeService } from './verified-claude.service';
@@ -30,50 +31,50 @@ import {
 
 /**
  * Template customization configuration
- */
+  */
 export interface TemplateCustomizationConfig {
-  /** Enable AI-powered recommendations */
+  /** Enable AI-powered recommendations  */
   enableAIRecommendations: boolean;
   
-  /** Debug mode for detailed logging */
+  /** Debug mode for detailed logging  */
   debugMode: boolean;
   
-  /** Maximum processing time in ms */
+  /** Maximum processing time in ms  */
   maxProcessingTime: number;
   
-  /** Cache customization results */
+  /** Cache customization results  */
   enableCaching: boolean;
 }
 
 /**
  * CV analysis result for template selection
- */
+  */
 export interface CVAnalysisResult {
-  /** Detected industry/field */
+  /** Detected industry/field  */
   industry: string;
   
-  /** Professional level assessment */
+  /** Professional level assessment  */
   level: ProfessionalLevel;
   
-  /** Career focus areas */
+  /** Career focus areas  */
   focusAreas: string[];
   
-  /** Personality traits extracted */
+  /** Personality traits extracted  */
   personalityTraits: PersonalityTrait[];
   
-  /** Content analysis */
+  /** Content analysis  */
   contentAnalysis: ContentAnalysis;
   
-  /** Recommended template category */
+  /** Recommended template category  */
   recommendedCategory: PortalTemplateCategory;
   
-  /** Confidence score (0-1) */
+  /** Confidence score (0-1)  */
   confidence: number;
 }
 
 /**
  * Professional experience levels
- */
+  */
 export enum ProfessionalLevel {
   ENTRY_LEVEL = 'entry_level',
   JUNIOR = 'junior',
@@ -86,7 +87,7 @@ export enum ProfessionalLevel {
 
 /**
  * Personality traits for design adaptation
- */
+  */
 export enum PersonalityTrait {
   CREATIVE = 'creative',
   ANALYTICAL = 'analytical',
@@ -100,36 +101,36 @@ export enum PersonalityTrait {
 
 /**
  * Content analysis results
- */
+  */
 export interface ContentAnalysis {
-  /** Total word count */
+  /** Total word count  */
   wordCount: number;
   
-  /** Key technical skills mentioned */
+  /** Key technical skills mentioned  */
   technicalSkills: string[];
   
-  /** Soft skills mentioned */
+  /** Soft skills mentioned  */
   softSkills: string[];
   
-  /** Industries mentioned */
+  /** Industries mentioned  */
   industries: string[];
   
-  /** Company types */
+  /** Company types  */
   companyTypes: CompanyType[];
   
-  /** Content density by section */
+  /** Content density by section  */
   sectionDensity: Record<string, number>;
   
-  /** Achievement indicators */
+  /** Achievement indicators  */
   achievementCount: number;
   
-  /** International experience indicators */
+  /** International experience indicators  */
   internationalExperience: boolean;
 }
 
 /**
  * Company types for industry analysis
- */
+  */
 export enum CompanyType {
   STARTUP = 'startup',
   SCALE_UP = 'scale_up',
@@ -143,26 +144,26 @@ export enum CompanyType {
 
 /**
  * Template selection preferences
- */
+  */
 export interface TemplatePreferences {
-  /** Preferred template category */
+  /** Preferred template category  */
   category?: PortalTemplateCategory;
   
-  /** Color preferences */
+  /** Color preferences  */
   colorPreferences?: {
     preferredColors: string[];
     avoidColors: string[];
     colorTemperature: 'warm' | 'cool' | 'neutral';
   };
   
-  /** Layout preferences */
+  /** Layout preferences  */
   layoutPreferences?: {
     density: 'compact' | 'comfortable' | 'spacious';
     sectionOrder: PortalSection[];
     mobileFirst: boolean;
   };
   
-  /** Industry-specific requirements */
+  /** Industry-specific requirements  */
   industryRequirements?: {
     conservative: boolean;
     creative: boolean;
@@ -173,9 +174,9 @@ export interface TemplatePreferences {
 
 /**
  * Dynamic theme generation result
- */
+  */
 export interface GeneratedTheme extends PortalTheme {
-  /** Theme generation metadata */
+  /** Theme generation metadata  */
   generationMetadata: {
     aiGenerated: boolean;
     industryAdapted: boolean;
@@ -184,26 +185,26 @@ export interface GeneratedTheme extends PortalTheme {
     generatedAt: Date;
   };
   
-  /** Layout configuration */
+  /** Layout configuration  */
   layout?: {
     headerStyle: 'minimal' | 'hero' | 'detailed';
     navigationStyle: 'horizontal' | 'vertical' | 'hidden';
     contentLayout: 'single' | 'two-column' | 'grid';
   };
   
-  /** Responsive breakpoints */
+  /** Responsive breakpoints  */
   breakpoints: ResponsiveBreakpoints;
   
-  /** Component variants */
+  /** Component variants  */
   componentVariants: ComponentVariants;
   
-  /** Animation presets */
+  /** Animation presets  */
   animations: AnimationPresets;
 }
 
 /**
  * Responsive design breakpoints
- */
+  */
 export interface ResponsiveBreakpoints {
   mobile: string;    // 320px
   tablet: string;    // 768px
@@ -214,7 +215,7 @@ export interface ResponsiveBreakpoints {
 
 /**
  * Component styling variants
- */
+  */
 export interface ComponentVariants {
   buttons: ButtonVariants;
   cards: CardVariants;
@@ -224,7 +225,7 @@ export interface ComponentVariants {
 
 /**
  * Button styling variants
- */
+  */
 export interface ButtonVariants {
   primary: ComponentStyle;
   secondary: ComponentStyle;
@@ -234,7 +235,7 @@ export interface ButtonVariants {
 
 /**
  * Card styling variants
- */
+  */
 export interface CardVariants {
   default: ComponentStyle;
   elevated: ComponentStyle;
@@ -244,7 +245,7 @@ export interface CardVariants {
 
 /**
  * Navigation styling variants
- */
+  */
 export interface NavigationVariants {
   header: ComponentStyle;
   sidebar: ComponentStyle;
@@ -254,7 +255,7 @@ export interface NavigationVariants {
 
 /**
  * Form styling variants
- */
+  */
 export interface FormVariants {
   input: ComponentStyle;
   textarea: ComponentStyle;
@@ -264,7 +265,7 @@ export interface FormVariants {
 
 /**
  * Component style definition
- */
+  */
 export interface ComponentStyle {
   base: string;
   hover: string;
@@ -275,7 +276,7 @@ export interface ComponentStyle {
 
 /**
  * Animation presets
- */
+  */
 export interface AnimationPresets {
   pageTransitions: string;
   buttonHover: string;
@@ -287,50 +288,50 @@ export interface AnimationPresets {
 
 /**
  * Responsive CSS generation result
- */
+  */
 export interface ResponsiveCSS {
-  /** Mobile-first base styles */
+  /** Mobile-first base styles  */
   base: string;
   
-  /** Tablet styles */
+  /** Tablet styles  */
   tablet: string;
   
-  /** Desktop styles */
+  /** Desktop styles  */
   desktop: string;
   
-  /** High-resolution styles */
+  /** High-resolution styles  */
   highRes: string;
   
-  /** Dark mode styles */
+  /** Dark mode styles  */
   darkMode: string;
   
-  /** Print styles */
+  /** Print styles  */
   print: string;
   
-  /** Accessibility enhancements */
+  /** Accessibility enhancements  */
   accessibility: string;
 }
 
 /**
  * Component configuration for portal sections
- */
+  */
 export interface ComponentConfig {
-  /** Section visibility */
+  /** Section visibility  */
   sections: Record<PortalSection, SectionConfig>;
   
-  /** Interactive features */
+  /** Interactive features  */
   interactiveFeatures: InteractiveFeatureConfig;
   
-  /** Performance optimizations */
+  /** Performance optimizations  */
   performance: PerformanceConfig;
   
-  /** SEO enhancements */
+  /** SEO enhancements  */
   seo: SEOConfig;
 }
 
 /**
  * Section-specific configuration
- */
+  */
 export interface SectionConfig {
   enabled: boolean;
   order: number;
@@ -341,7 +342,7 @@ export interface SectionConfig {
 
 /**
  * Interactive feature configuration
- */
+  */
 export interface InteractiveFeatureConfig {
   chat: {
     enabled: boolean;
@@ -370,7 +371,7 @@ export interface InteractiveFeatureConfig {
 
 /**
  * Performance optimization settings
- */
+  */
 export interface PerformanceConfig {
   lazyLoading: boolean;
   imageOptimization: boolean;
@@ -384,7 +385,7 @@ export interface PerformanceConfig {
 
 /**
  * SEO configuration
- */
+  */
 export interface SEOConfig {
   metaTags: boolean;
   structuredData: boolean;
@@ -395,38 +396,38 @@ export interface SEOConfig {
 
 /**
  * Platform deployment optimization
- */
+  */
 export interface PlatformOptimization {
-  /** Target deployment platforms */
+  /** Target deployment platforms  */
   platforms: string[];
   
-  /** Platform-specific optimizations */
+  /** Platform-specific optimizations  */
   optimizations: Record<string, PlatformSpecificConfig>;
   
-  /** Cross-platform compatibility */
+  /** Cross-platform compatibility  */
   compatibility: CompatibilityConfig;
 }
 
 /**
  * Platform-specific configuration
- */
+  */
 export interface PlatformSpecificConfig {
-  /** Framework-specific settings */
+  /** Framework-specific settings  */
   framework: Record<string, any>;
   
-  /** Asset optimization */
+  /** Asset optimization  */
   assets: AssetOptimization;
   
-  /** Performance tuning */
+  /** Performance tuning  */
   performance: PerformanceOptimization;
   
-  /** Security considerations */
+  /** Security considerations  */
   security: SecurityConfig;
 }
 
 /**
  * Asset optimization settings
- */
+  */
 export interface AssetOptimization {
   images: {
     format: 'webp' | 'jpg' | 'png' | 'auto';
@@ -455,21 +456,21 @@ export interface AssetOptimization {
 
 /**
  * Performance optimization settings
- */
+  */
 export interface PerformanceOptimization {
-  /** Bundle size limits */
+  /** Bundle size limits  */
   bundleSize: {
     max: number;
     warning: number;
   };
   
-  /** Loading strategies */
+  /** Loading strategies  */
   loading: {
     strategy: 'eager' | 'lazy' | 'progressive';
     priority: ('above-fold' | 'below-fold' | 'interactive')[];
   };
   
-  /** Caching strategies */
+  /** Caching strategies  */
   caching: {
     static: boolean;
     dynamic: boolean;
@@ -479,36 +480,36 @@ export interface PerformanceOptimization {
 
 /**
  * Security configuration
- */
+  */
 export interface SecurityConfig {
-  /** Content Security Policy */
+  /** Content Security Policy  */
   csp: boolean;
   
-  /** XSS protection */
+  /** XSS protection  */
   xssProtection: boolean;
   
-  /** Frame options */
+  /** Frame options  */
   frameOptions: 'DENY' | 'SAMEORIGIN' | 'ALLOW-FROM';
   
-  /** HTTPS enforcement */
+  /** HTTPS enforcement  */
   httpsOnly: boolean;
 }
 
 /**
  * Cross-platform compatibility settings
- */
+  */
 export interface CompatibilityConfig {
-  /** Browser support targets */
+  /** Browser support targets  */
   browsers: string[];
   
-  /** Mobile compatibility */
+  /** Mobile compatibility  */
   mobile: {
     responsive: boolean;
     touchOptimized: boolean;
     gestureSupport: boolean;
   };
   
-  /** Accessibility compliance */
+  /** Accessibility compliance  */
   accessibility: {
     wcagLevel: 'A' | 'AA' | 'AAA';
     screenReader: boolean;
@@ -624,7 +625,7 @@ export class TemplateCustomizationService {
 
   /**
    * Analyze CV content to determine optimal template and styling approach
-   */
+    */
   async analyzeCV(cvData: ParsedCV): Promise<CVAnalysisResult> {
     logger.info('[TEMPLATE-CUSTOMIZATION] Starting CV analysis', {
       hasPersonalInfo: !!cvData.personalInfo,
@@ -661,7 +662,7 @@ export class TemplateCustomizationService {
 
   /**
    * Select optimal template based on CV analysis and user preferences
-   */
+    */
   async selectTemplate(
     cvData: ParsedCV, 
     preferences?: TemplatePreferences
@@ -697,7 +698,7 @@ export class TemplateCustomizationService {
 
   /**
    * Generate dynamic theme based on industry, personal brand, and preferences
-   */
+    */
   async generateTheme(
     industry: string, 
     personalBrand?: any, 
@@ -777,7 +778,7 @@ export class TemplateCustomizationService {
 
   /**
    * Customize layout based on template and CV content
-   */
+    */
   async customizeLayout(
     template: PortalTemplate, 
     cvData: ParsedCV
@@ -824,7 +825,7 @@ export class TemplateCustomizationService {
 
   /**
    * Generate responsive CSS for mobile-first design
-   */
+    */
   async generateResponsiveCSS(
     theme: GeneratedTheme, 
     layout: any
@@ -856,7 +857,7 @@ export class TemplateCustomizationService {
 
   /**
    * Create component configuration based on CV sections
-   */
+    */
   async createComponentConfig(sections: PortalSection[]): Promise<ComponentConfig> {
     logger.info('[TEMPLATE-CUSTOMIZATION] Creating component configuration', {
       sectionCount: sections.length
@@ -933,7 +934,7 @@ export class TemplateCustomizationService {
 
   /**
    * Optimize template for specific deployment platforms
-   */
+    */
   async optimizeForDeployment(
     template: PortalTemplate, 
     platform: string
@@ -1760,7 +1761,7 @@ Format as JSON with these exact keys: industry, level, focusAreas, personalityTr
 
   private generateBaseCSS(theme: GeneratedTheme): string {
     return `
-/* Base Mobile-First Styles */
+/* Base Mobile-First Styles  */
 * {
   margin: 0;
   padding: 0;
@@ -1782,7 +1783,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
+/* Typography  */
 h1, h2, h3, h4, h5, h6 {
   font-family: ${theme.typography.fontFamilies.heading};
   font-weight: ${theme.typography.fontWeights.semibold};
@@ -1802,7 +1803,7 @@ p {
   line-height: ${theme.typography.lineHeights.relaxed};
 }
 
-/* Layout */
+/* Layout  */
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -1813,7 +1814,7 @@ p {
   padding: 2rem 0;
 }
 
-/* Components */
+/* Components  */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -1848,14 +1849,14 @@ p {
   transform: translateY(-2px);
 }
 
-/* Utilities */
+/* Utilities  */
 .text-primary { color: ${theme.colors.primary}; }
 .text-secondary { color: ${theme.colors.secondary}; }
 .text-muted { color: ${theme.colors.text.muted}; }
 .bg-primary { background-color: ${theme.colors.primary}; }
 .border-primary { border-color: ${theme.colors.border.primary}; }
 
-/* Accessibility */
+/* Accessibility  */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1868,13 +1869,13 @@ p {
   border: 0;
 }
 
-/* Focus styles */
+/* Focus styles  */
 *:focus {
   outline: 2px solid ${theme.colors.primary};
   outline-offset: 2px;
 }
 
-/* Animation utilities */
+/* Animation utilities  */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
@@ -1901,7 +1902,7 @@ p {
 
   private generateTabletCSS(theme: GeneratedTheme): string {
     return `
-/* Tablet Styles (768px and up) */
+/* Tablet Styles (768px and up)  */
 @media (min-width: ${theme.breakpoints.tablet}) {
   .container {
     max-width: 768px;
@@ -1930,7 +1931,7 @@ p {
 
   private generateDesktopCSS(theme: GeneratedTheme): string {
     return `
-/* Desktop Styles (1024px and up) */
+/* Desktop Styles (1024px and up)  */
 @media (min-width: ${theme.breakpoints.desktop}) {
   .container {
     max-width: 1024px;
@@ -1964,7 +1965,7 @@ p {
 
   private generateHighResCSS(theme: GeneratedTheme): string {
     return `
-/* High Resolution Styles (1440px and up) */
+/* High Resolution Styles (1440px and up)  */
 @media (min-width: ${theme.breakpoints.wide}) {
   .container {
     max-width: 1200px;
@@ -1981,7 +1982,7 @@ p {
 
   private generateDarkModeCSS(theme: GeneratedTheme): string {
     return `
-/* Dark Mode Styles */
+/* Dark Mode Styles  */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #1a1a1a;
@@ -2012,7 +2013,7 @@ p {
 
   private generatePrintCSS(theme: GeneratedTheme): string {
     return `
-/* Print Styles */
+/* Print Styles  */
 @media print {
   * {
     color: black !important;
@@ -2043,9 +2044,9 @@ p {
 
   private generateAccessibilityCSS(theme: GeneratedTheme): string {
     return `
-/* Accessibility Enhancements */
+/* Accessibility Enhancements  */
 
-/* High contrast mode */
+/* High contrast mode  */
 @media (prefers-contrast: high) {
   .btn {
     border: 2px solid;
@@ -2056,7 +2057,7 @@ p {
   }
 }
 
-/* Reduced motion */
+/* Reduced motion  */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -2065,7 +2066,7 @@ p {
   }
 }
 
-/* Focus management */
+/* Focus management  */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -2081,7 +2082,7 @@ p {
   top: 6px;
 }
 
-/* Screen reader helpers */
+/* Screen reader helpers  */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2094,7 +2095,7 @@ p {
   border-width: 0;
 }
 
-/* Keyboard navigation */
+/* Keyboard navigation  */
 .btn:focus,
 .card:focus,
 input:focus,
@@ -2104,7 +2105,7 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Touch targets */
+/* Touch targets  */
 @media (hover: none) and (pointer: coarse) {
   .btn {
     min-height: 44px;

@@ -1,6 +1,7 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * Certification-related type definitions for the CVPlus Workflow module
- */
+  */
 
 export type BadgeType = 
   | 'cv-completion'

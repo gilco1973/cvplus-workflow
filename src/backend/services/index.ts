@@ -1,8 +1,9 @@
-// @ts-ignore - Export conflicts/**
+// @ts-ignore
+/**
  * CVPlus Workflow Module - Backend Services Export
  * 
  * This module exports all workflow-related backend services
- */
+  */
 
 // Core Workflow Services
 export { WorkflowOrchestrator } from './WorkflowOrchestrator';

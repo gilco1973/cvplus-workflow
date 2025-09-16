@@ -19,7 +19,7 @@ interface UpdateJobFeaturesResponse {
 /**
  * Premium Feature Configuration - Server-side validation
  * Must match frontend configuration in /frontend/src/config/premiumFeatures.ts
- */
+  */
 const PREMIUM_FEATURE_MAPPINGS: Record<string, string> = {
   // Advanced Features - require Premium access
   'skills-visualization': 'advancedAnalytics',
@@ -38,7 +38,7 @@ const PREMIUM_FEATURE_MAPPINGS: Record<string, string> = {
 
 /**
  * Free features - available to all users
- */
+  */
 const FREE_FEATURES = [
   'ats-optimization',
   'keyword-enhancement', 
@@ -52,21 +52,21 @@ const FREE_FEATURES = [
 
 /**
  * Check if a feature requires premium access
- */
+  */
 function isPremiumFeature(featureId: string): boolean {
   return !!PREMIUM_FEATURE_MAPPINGS[featureId];
 }
 
 /**
  * Get the premium type required for a feature
- */
+  */
 function getPremiumTypeForFeature(featureId: string): string | null {
   return PREMIUM_FEATURE_MAPPINGS[featureId] || null;
 }
 
 /**
  * Get user subscription data directly from Firestore
- */
+  */
 async function getUserSubscriptionData(userId: string): Promise<{
   subscriptionStatus: string;
   lifetimeAccess: boolean;
@@ -120,7 +120,7 @@ async function getUserSubscriptionData(userId: string): Promise<{
 
 /**
  * Validate user access to selected features based on their premium subscription
- */
+  */
 async function validateFeatureAccess(
   userId: string,
   selectedFeatures: string[]
@@ -212,7 +212,7 @@ async function validateFeatureAccess(
  * 
  * This function enforces server-side validation to ensure only premium users
  * can select and use premium features. Non-premium users are restricted to free features.
- */
+  */
 export const updateJobFeatures = onCall<UpdateJobFeaturesRequest>(
   { cors: true },
   async (request): Promise<UpdateJobFeaturesResponse> => {
