@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore
 /**
  * Timeline Service Type Definitions
  * Shared types for timeline generation and validation

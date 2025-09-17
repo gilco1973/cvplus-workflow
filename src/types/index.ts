@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore
 /**
  * CVPlus Workflow Module - Type Definitions Export
  * 
@@ -53,4 +53,15 @@ export type {
   RoleRequirements, 
   RoleAnalysis, 
   RoleOptimization 
-} from './RoleProfile';
+} from './RoleProfile';export * from './api';
+export * from './booking.types';
+export * from './payment.types';
+export * from './api';
+export * from './booking.types';
+export * from './payment.types';
+export * from './api';
+export * from './booking.types';
+export * from './payment.types';
+export * from './api';
+export * from './booking.types';
+export * from './payment.types';

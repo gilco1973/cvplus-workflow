@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore
 /**
  * API helper functions for the CVPlus Workflow module
   */

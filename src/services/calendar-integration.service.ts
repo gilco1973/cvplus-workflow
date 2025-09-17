@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore
 /**
  * Calendar Integration Service
  * Sync career milestones with Google Calendar, Outlook, and iCal

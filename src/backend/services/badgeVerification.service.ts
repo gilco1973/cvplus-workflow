@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore
 /**
  * Badge Verification Service
  * Integrates with digital badge providers for certification verification

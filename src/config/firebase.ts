@@ -1,4 +1,4 @@
-// @ts-ignore - Export conflicts// Re-export Firebase configuration from core package for workflow module
+// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// @ts-ignore - Export conflicts// Re-export Firebase configuration from core package for workflow module
 export {
   db,
   storage,
