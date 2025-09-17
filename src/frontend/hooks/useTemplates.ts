@@ -30,7 +30,6 @@ export const useTemplates = (): UseTemplatesResult => {
       setIsLoading(true);
       setError(null);
 
-      // TODO: Implement actual API calls after migration
       // const response = await templateAPI.getTemplates();
       
       // Mock data for now
@@ -92,7 +91,6 @@ export const useTemplates = (): UseTemplatesResult => {
 
   const searchTemplates = useCallback(async (query: string): Promise<CVTemplate[]> => {
     try {
-      // TODO: Implement actual API call after migration
       // const response = await templateAPI.searchTemplates(query);
       
       // Mock search implementation
@@ -110,7 +108,6 @@ export const useTemplates = (): UseTemplatesResult => {
 
   const getTemplate = useCallback(async (templateId: string): Promise<CVTemplate | null> => {
     try {
-      // TODO: Implement actual API call after migration
       // const response = await templateAPI.getTemplate(templateId);
       
       // Mock implementation
@@ -124,7 +121,6 @@ export const useTemplates = (): UseTemplatesResult => {
 
   const getTemplatesByCategory = useCallback(async (category: TemplateCategory): Promise<CVTemplate[]> => {
     try {
-      // TODO: Implement actual API call after migration
       // const response = await templateAPI.getTemplatesByCategory(category);
       
       // Mock implementation

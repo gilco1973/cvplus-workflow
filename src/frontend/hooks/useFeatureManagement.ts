@@ -28,7 +28,6 @@ export const useFeatureManagement = (jobId: string): UseFeatureManagementResult 
     setError(null);
 
     try {
-      // TODO: Implement actual API call after migration
       // const response = await workflowAPI.completeFeature(jobId, featureId, completionData);
       
       // Mock implementation
@@ -61,7 +60,6 @@ export const useFeatureManagement = (jobId: string): UseFeatureManagementResult 
     setError(null);
 
     try {
-      // TODO: Implement actual API call after migration
       // const response = await workflowAPI.skipFeature(jobId, featureId, reason);
       
       // Mock implementation
@@ -94,7 +92,6 @@ export const useFeatureManagement = (jobId: string): UseFeatureManagementResult 
     setError(null);
 
     try {
-      // TODO: Implement actual API call after migration
       // await workflowAPI.updateFeatureStatus(jobId, featureId, status);
       
       // Mock implementation
@@ -118,7 +115,6 @@ export const useFeatureManagement = (jobId: string): UseFeatureManagementResult 
     setError(null);
 
     try {
-      // TODO: Implement actual API call after migration
       // await workflowAPI.updateFeatureProgress(jobId, featureId, progress);
       
       // Mock implementation

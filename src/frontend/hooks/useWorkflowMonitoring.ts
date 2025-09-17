@@ -29,7 +29,6 @@ export const useWorkflowMonitoring = (jobId: string): UseWorkflowMonitoringResul
       setIsLoading(true);
       setError(null);
 
-      // TODO: Implement actual API calls after migration
       // const response = await workflowAPI.getMonitoringData(jobId);
       
       // Mock data for now

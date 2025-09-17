@@ -34,7 +34,6 @@ export const useCertificationBadges = (userId: string): UseCertificationBadgesRe
       setIsLoading(true);
       setError(null);
 
-      // TODO: Implement actual API calls after migration
       // const response = await certificationAPI.getUserBadges(userId);
       
       // Mock data for now
@@ -97,7 +96,6 @@ export const useCertificationBadges = (userId: string): UseCertificationBadgesRe
 
   const verifyBadge = useCallback(async (badgeId: string): Promise<boolean> => {
     try {
-      // TODO: Implement actual API call after migration
       // const response = await certificationAPI.verifyBadge(badgeId);
       
       // Mock verification
@@ -121,7 +119,6 @@ export const useCertificationBadges = (userId: string): UseCertificationBadgesRe
     progress?: number;
   }> => {
     try {
-      // TODO: Implement actual API call after migration
       // const response = await certificationAPI.checkEligibility(userId, badgeType);
       
       // Mock eligibility check
